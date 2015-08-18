@@ -1,0 +1,90 @@
+{% extends 'Base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+    <div class="wall">
+        <div class="header">
+            <div class="logo">
+                成都贤卓新信息技术有限公司
+            </div>
+            <div class="language">
+                Language:
+                <div class="btn-group">
+                    <button type="button" id="select_lang" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        CHINESE <span class="caret" id="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" id="dropdown-menu">
+                        <li><a href="#">CHINESE</a></li>
+                        <li><a href="#">ENGLISH</a></li>
+                        <li><a href="#">JAPANESE</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="introduc">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li>
+        {#                    <img src="" />#}
+                        <div style="background: royalblue; width: 100%; height: 450px;"></div>
+                    </li>
+                    <li>
+        {#                    <img src="" />#}
+                        <div style="background: tomato; width: 100%; height: 450px;"></div>
+                    </li>
+                    <li>
+        {#                    <img src="" />#}
+                        <div style="background: salmon; width: 100%; height: 450px;"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <img src="{% static 'deskxd_com/images/play.png' %}" />
+                        TitleName
+                    </div>
+                    <div class="g-more"><a href="#">MORE</a></div>
+                </div>
+                <div class="group-txt">
+                    <div class="t-group">
+                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
+                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="t-group">
+                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
+                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="t-group">
+                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
+                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="t-group" id="last-group">
+                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
+                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            Copyright © 2015-2020 Deskxd.com 版权所有　侵权必究！最终解释权归贤卓所有
+        </div>
+    </div>
+    <div class="menu">
+        <div class="center-menu">
+            <ul id="left-menu">
+                <li>Home</li>
+                <li>About</li>
+                <li>Game</li>
+                <li>Join</li>
+            </ul>
+            <ul id="right-menu">
+                <li>POWERED BY</li>
+                <li>GITHUB</li>
+                <li>DEBIAN</li>
+                <li>NGINX</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

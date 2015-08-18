@@ -1,0 +1,186 @@
+body{
+	color: #2C3E50;
+	font-family: 'PT Sans Narrow', Arial, sans-serif;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+a{
+	color: #2C3E50;
+	text-decoration: none;
+}
+
+/* Menu Style */
+.menu{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	width: 100%;
+	font-size: 16px;
+	background: url("../images/about-join-div-bg.png") repeat;
+	height: 40px;
+	text-transform: uppercase;
+}
+.center-menu{
+	width: 75%;
+	max-width: 1000px;
+	margin: 0 auto;
+	color: #2C3E50;
+	z-index: 20;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 900;
+}
+#left-menu{
+	float: left;
+}
+#left-menu li{
+	float: left;
+	margin-right: 10px;
+	list-style: none;
+}
+#right-menu{
+	float: right;
+}
+#right-menu li{
+	float: left;
+	margin-right: 10px;
+	list-style: none;
+}
+/* End Style */
+
+.wall{
+	background: #f0f0f0;
+	width: 100%;
+	height: 100%;
+}
+
+.header{
+	width: 75%;
+	max-width: 1000px;
+	height: 80px;
+	line-height: 80px;
+	margin: 0 auto;
+}
+
+.logo{
+	float: left;
+	font-size: 24px;
+	font-weight: 800;
+	color: #2C3E50;
+}
+
+.language{
+	float: right;
+	font-size: 16px;
+	font-weight: 500;
+	color: #2C3E50;
+}
+
+#select_lang{
+	border-radius: 0px;
+	width: 160px;
+}
+
+#caret{
+	float: right;
+	margin-top: 8px;
+}
+
+#dropdown-menu{
+	color: #2C3E50;
+	border-radius: 0;
+}
+
+.introduc{
+	width: 90%;
+	max-width: 1300px;
+	margin: 0 auto;
+	height: 450px;
+}
+
+.content{
+	width: 75%;
+	max-width: 1000px;
+	margin: 0 auto;
+	margin-top: 70px;
+}
+
+/* Group Style */
+.group{
+	width: 100%;
+	height: 400px;
+}
+.group-title{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+}
+.g-title{
+	margin-left: 16px;
+	float: left;
+	font-size: 26px;
+	font-weight: 800;
+	color: #000000;
+}
+.g-more{
+	float: right;
+	font-size: 16px;
+	font-weight: 800;
+	margin-right: 16px;
+}
+.g-more a:link{
+	text-decoration: none;
+}
+.g-more a:hover{
+	text-decoration: none;
+}
+.g-more a:active{
+	text-decoration: none;
+}
+.g-more a:visited{
+	text-decoration: none;
+}
+.group-txt{
+	height: 320px;
+	margin-top: 20px;
+}
+.t-group{
+	float: left;
+	width: 230px;
+	margin-left: 16px;
+	height: 320px;
+}
+.t-group img{
+	width: 230px;
+	height: 230px;
+}
+.t-group a:hover{
+	opacity: 0.6;
+}
+.t-info{
+	width: 230px;
+	height: 50px;
+	margin-top: 29px;
+	font-size: 16px;
+	font-weight: 500;
+	text-align: left;
+}
+/* End Style*/
+
+.footer{
+	clear: both;
+	width: 75%;
+	max-width: 1000px;
+	height: 60px;
+	line-height: 60px;
+	background: #2C3E50;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	color: #f0f0f0;
+	text-align: center;
+}
