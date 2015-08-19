@@ -2,6 +2,7 @@
 {% load static from staticfiles %}
 {% block content %}
     <div class="wall">
+{#        <div class="bg"></div>#}
         <div class="header">
             <div class="logo">
                 成都贤卓新信息技术有限公司
@@ -24,16 +25,13 @@
             <div class="flexslider">
                 <ul class="slides">
                     <li>
-        {#                    <img src="" />#}
-                        <div style="background: royalblue; width: 100%; height: 450px;"></div>
+                        <img src="{% static 'deskxd_com/images/test.jpg' %}" />
                     </li>
                     <li>
-        {#                    <img src="" />#}
-                        <div style="background: tomato; width: 100%; height: 450px;"></div>
+                        <img src="{% static 'deskxd_com/images/test2.jpg' %}" />
                     </li>
                     <li>
-        {#                    <img src="" />#}
-                        <div style="background: salmon; width: 100%; height: 450px;"></div>
+                        <img src="{% static 'deskxd_com/images/test3.jpg' %}" />
                     </li>
                 </ul>
             </div>
@@ -60,31 +58,35 @@
                         <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
                         <div class="t-info">test test test test test test test test test test test test test test test</div>
                     </div>
-                    <div class="t-group" id="last-group">
+                    <div class="t-group">
                         <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
                         <div class="t-info">test test test test test test test test test test test test test test test</div>
                     </div>
                 </div>
             </div>
+            <div class="line"></div>
         </div>
         <div class="footer">
-            Copyright © 2015-2020 Deskxd.com 版权所有　侵权必究！最终解释权归贤卓所有
+            <div class="center-footer">
+                <div class="left">
+                    <a href="#">COMPANY INFORMATION</a>|
+                    <a href="#">POWERED BY</a>
+                </div>
+                <div class="right">
+                    Copyright © 2015-2020 Deskxd.com 版权所有
+                </div>
+            </div>
         </div>
     </div>
     <div class="menu">
         <div class="center-menu">
-            <ul id="left-menu">
-                <li>Home</li>
-                <li>About</li>
-                <li>Game</li>
-                <li>Join</li>
-            </ul>
-            <ul id="right-menu">
-                <li>POWERED BY</li>
-                <li>GITHUB</li>
-                <li>DEBIAN</li>
-                <li>NGINX</li>
-            </ul>
+            <img src="{% static 'deskxd_com/images/OverDesk.png' %}" width="200px" />
+            <div class="right-menu">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Game</a>
+                <a href="#">Join</a>
+            </div>
         </div>
     </div>
 {% endblock %}
