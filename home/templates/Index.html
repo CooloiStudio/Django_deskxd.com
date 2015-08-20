@@ -5,20 +5,14 @@
 {#        <div class="bg"></div>#}
         <div class="header">
             <div class="logo">
-                成都贤卓新信息技术有限公司
+                <strong>贤　卓　·　成　都</strong>
             </div>
-            <div class="language">
-                Language:
-                <div class="btn-group">
-                    <button type="button" id="select_lang" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        CHINESE <span class="caret" id="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown-menu">
-                        <li><a href="#">CHINESE</a></li>
-                        <li><a href="#">ENGLISH</a></li>
-                        <li><a href="#">JAPANESE</a></li>
-                    </ul>
-                </div>
+            <div class="guider">
+                <a href="#">Home</a>
+                <a href="#">Game</a>
+                <a href="#">Information</a>
+                <a href="#">Member</a>
+                <a href="#">Contact</a>
             </div>
         </div>
         <div class="introduc">
@@ -40,31 +34,84 @@
             <div class="group">
                 <div class="group-title">
                     <div class="g-title">
-                        <img src="{% static 'deskxd_com/images/play.png' %}" />
-                        TitleName
+                        <div class="g-title">
+                            <div class="t-img">
+                                <img src="{% static 'deskxd_com/images/member.png' %}" />
+                            </div>
+                            <div class="t-name">GAME</div>
+                        </div>
                     </div>
                     <div class="g-more"><a href="#">MORE</a></div>
                 </div>
                 <div class="group-txt">
-                    <div class="t-group">
-                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
-                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    <div class="l-group" id="l-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/476.png' %}" /></a>
+                        <div class="l-info">test test test test test test test test test test test test test test test</div>
                     </div>
-                    <div class="t-group">
-                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
-                        <div class="t-info">test test test test test test test test test test test test test test test</div>
-                    </div>
-                    <div class="t-group">
-                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
-                        <div class="t-info">test test test test test test test test test test test test test test test</div>
-                    </div>
-                    <div class="t-group">
-                        <a href=""><img src="{% static 'deskxd_com/photo/01.png' %}" /></a>
-                        <div class="t-info">test test test test test test test test test test test test test test test</div>
+                    <div class="l-group">
+                        <a href=""><img src="{% static 'deskxd_com/images/476.png' %}" /></a>
+                        <div class="l-info">test test test test test test test test test test test test test test test</div>
                     </div>
                 </div>
             </div>
             <div class="line"></div>
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <div class="g-title">
+                            <div class="t-img">
+                                <img src="{% static 'deskxd_com/images/member.png' %}" />
+                            </div>
+                            <div class="t-name">INFORMATION</div>
+                        </div>
+                    </div>
+                    <div class="g-more"><a href="#">MORE</a></div>
+                </div>
+                <div class="group-txt">
+                    <div class="m-group" id="m-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/312.jpg' %}" /></a>
+                        <div class="m-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="m-group" id="m-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/312.jpg' %}" /></a>
+                        <div class="m-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="m-group">
+                        <a href=""><img src="{% static 'deskxd_com/images/312.jpg' %}" /></a>
+                        <div class="m-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <div class="t-img">
+                            <img src="{% static 'deskxd_com/images/member.png' %}" />
+                        </div>
+                        <div class="t-name">MEMBER</div>
+                    </div>
+                    <div class="g-more"><a href="#">MORE</a></div>
+                </div>
+                <div class="group-txt">
+                    <div class="sm-group" id="sm-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/230.jpg' %}" /></a>
+                        <div class="sm-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="sm-group" id="sm-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/230.jpg' %}" /></a>
+                        <div class="sm-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="sm-group" id="sm-one">
+                        <a href=""><img src="{% static 'deskxd_com/images/230.jpg' %}" /></a>
+                        <div class="sm-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                    <div class="sm-group">
+                        <a href=""><img src="{% static 'deskxd_com/images/230.jpg' %}" /></a>
+                        <div class="sm-info">test test test test test test test test test test test test test test test</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer">
             <div class="center-footer">
@@ -75,17 +122,6 @@
                 <div class="right">
                     Copyright © 2015-2020 Deskxd.com 版权所有
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="menu">
-        <div class="center-menu">
-            <img src="{% static 'deskxd_com/images/OverDesk.png' %}" width="200px" />
-            <div class="right-menu">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Game</a>
-                <a href="#">Join</a>
             </div>
         </div>
     </div>
