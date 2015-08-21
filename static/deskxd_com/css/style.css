@@ -11,11 +11,12 @@ body{
 	background: #fafafa;
 	width: 100%;
 	height: 100%;
+	z-index: 1;
 }
 
 .header{
 	width: 75%;
-	max-width: 1000px;
+	max-width: 920px;
 	height: 100px;
 	margin: 0 auto;
 }
@@ -25,8 +26,18 @@ body{
 	font-size: 30px;
 	font-weight: 800;
 	color: #2C3E50;
-	height: 100px;
-	line-height: 100px;
+	width: 280px;
+	margin-top: 18px;
+}
+#lang{
+	float: left;
+	width: 100%;
+	margin-left: 1px;
+}
+#olang{
+	float: left;
+	width: 100%;
+	font-size: 16px;
 }
 
 .guider{
@@ -34,13 +45,22 @@ body{
 	font-size: 16px;
 	color: #2C3E50;
 	text-transform: uppercase;
-	margin-top: 47px;
 	font-weight: 800;
+	margin-top: 20px;
+}
+
+.guider div{
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .guider a{
+	float: left;
 	color: #2C3E50;
-	margin-left: 20px;
+	z-index: 1000;
 }
 
 .guider a:link{
@@ -48,8 +68,21 @@ body{
 	text-decoration: none;
 }
 
-.guider a:hover{
-	color: #2C3E50;
+#game:hover{
+	color: #fafafa;
+	background: #eb4c4c;
+}
+#information:hover{
+	color: #fafafa;
+	background: #af3dea;
+}
+#member:hover{
+	color: #fafafa;
+	background: #4c91eb;
+}
+#contact:hover{
+	color: #fafafa;
+	background: #eab33d;
 }
 
 .introduc{
@@ -60,15 +93,16 @@ body{
 .content{
 	width: 100%;
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 60px;
 }
 
 /* Group Style */
 .group{
 	max-width: 920px;
-	height: 370px;
+	height: 320px;
 	margin: 0 auto;
 	color: #2C3E50;
+	margin-bottom: 36px;
 }
 .group-title{
 	max-width: 920px;
@@ -76,16 +110,22 @@ body{
 }
 .g-title{
 	float: left;
-	font-size: 26px;
-	font-weight: 800;
 	color: #2C3E50;
 }
 .t-img{
 	float: left;
-	margin-top: 9px;
-	margin-right: 10px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 15px;
+	color: #ffffff;
+	margin-right: 5px;
+	font-size: 26px;
 }
 .t-name{
+	font-size: 26px;
+	font-weight: 800;
 	float: right;
 	height: 60px;
 	line-height: 60px;
@@ -108,7 +148,7 @@ body{
 }
 .group-txt{
 	height: 320px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 .group-txt a:hover{
 	opacity: 0.6;
@@ -128,11 +168,15 @@ body{
 .sm-info{
 	width: 216px;
 	height: 50px;
-	margin-top: 29px;
-	font-size: 16px;
+	margin-top: 13px;
+	font-size: 14px;
 	font-weight: 500;
 	text-align: left;
 	overflow: hidden;
+}
+.sm-info p{
+	margin-bottom: 0px !important;
+	text-align: center;
 }
 .m-group{
 	float: left;
@@ -149,11 +193,15 @@ body{
 .m-info{
 	width: 294px;
 	height: 50px;
-	margin-top: 29px;
+	margin-top: 13px;
 	font-size: 16px;
 	font-weight: 500;
 	text-align: left;
 	overflow: hidden;
+}
+.m-info p{
+	margin-bottom: 0px !important;
+	text-align: center;
 }
 .l-group{
 	float: left;
@@ -169,11 +217,16 @@ body{
 }
 .l-info{
 	width: 450px;
-	height: 50px;
-	margin-top: 29px;
+	height: 30px;
+	margin-top: 13px;
 	font-size: 16px;
 	font-weight: 500;
 	text-align: left;
+}
+.l-info p{
+	margin-bottom: 0px !important;
+	text-align: left;
+	margin-left: 10px;
 }
 .line{
 	background-image: url("../images/divide_line.jpg");
@@ -196,11 +249,11 @@ body{
 	color: #2C3E50;
 	background: url("../images/footer.png");
 	background-repeat: repeat-x;
-	margin-top: 60px;
+	margin-top: 70px;
 }
 .center-footer{
 	width: 75%;
-	max-width: 1000px;
+	max-width: 920px;
 	margin: 0 auto;
 }
 .footer a{
@@ -240,7 +293,9 @@ body{
 	.guider{
 		margin-right: 30px;
 		font-size: 14px;
-		margin-top: 48px;
+	}
+	#olang{
+		font-size: 14px;
 	}
 	.introduc img{
 		min-height: 400px;

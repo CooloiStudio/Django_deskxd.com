@@ -1,22 +1,5 @@
 from django.db import models
 
-class BaseHtml(models.Model):
-    name = models.CharField(max_length=20)
-
-    def __unicode__(self):
-        return self.name
-
-class Site(models.Model):
-    code = models.IntegerField(null=False, unique=True)
-    class_name = models.CharField(max_length=50, null=True)
-    id_name = models.CharField(max_length=50, null=True)
-    base_page = models.ForeignKey(BaseHtml)
-    default = models.BooleanField(default=True)
-    value = models.TextField(null=True, blank=True)
-
-class SiteTitle(models.Model):
-    name = models.CharField(max_length=50)
-    default = models.BooleanField(default=False)
 
 class IntroduceImage(models.Model):
     code = models.IntegerField(null=False, unique=True)
@@ -30,6 +13,9 @@ class Group(models.Model):
     url = models.CharField(max_length=50, null=False)
     group_class = models.CharField(max_length=20, null=False)
 
+    def __unicode__(self):
+        return self.title
+
 class GroupInfo(models.Model):
     group = models.ForeignKey(Group)
     code = models.IntegerField(unique=True, null=False)
@@ -37,16 +23,3 @@ class GroupInfo(models.Model):
     title = models.CharField(max_length=50, null=False)
     value = models.TextField(null=True, blank=True)
     info_class = models.CharField(null=False, max_length=20)
-
-    def __unicode__(self):
-        return self.title
-
-class PoweredBy(models.Model):
-    code = models.IntegerField(null=False, unique=True)
-    name = models.CharField(max_length=20)
-    url = models.CharField(max_length=100)
-
-class Menu(models.Model):
-    code = models.IntegerField(null=False, unique=True)
-    name = models.CharField(max_length=20)
-    url = models.CharField(max_length=100)
