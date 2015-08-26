@@ -9,9 +9,10 @@ class IntroduceImage(models.Model):
 class Group(models.Model):
     code = models.IntegerField(null=False, unique=True)
     title = models.CharField(max_length=20, null=False)
-    title_img = models.CharField(max_length=50, null=False)
+    title_logo = models.CharField(max_length=20, null=False)
+    logo_color = models.CharField(max_length=20)
     url = models.CharField(max_length=50, null=False)
-    group_class = models.CharField(max_length=20, null=False)
+    default = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.title
@@ -19,7 +20,10 @@ class Group(models.Model):
 class GroupInfo(models.Model):
     group = models.ForeignKey(Group)
     code = models.IntegerField(unique=True, null=False)
-    image_url = models.CharField(max_length=50, null=False)
+    image_url = models.CharField(max_length=150, null=False)
     title = models.CharField(max_length=50, null=False)
     value = models.TextField(null=True, blank=True)
-    info_class = models.CharField(null=False, max_length=20)
+    info_class = models.CharField(max_length=20)
+    info_id = models.CharField(max_length=20)
+    txt_class = models.CharField(max_length=20)
+    url = models.CharField(max_length=50)

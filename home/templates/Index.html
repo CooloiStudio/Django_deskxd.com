@@ -18,117 +18,47 @@
         <div class="introduc">
             <div class="flexslider">
                 <ul class="slides">
-                    <li>
-                        <img src="http://ww3.sinaimg.cn/large/006bwLnEgw1evad63fedyj30zk0dwgn5.jpg" />
-                    </li>
-                    <li>
-                        <img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3c9kpcj30zk0dwjvb.jpg" />
-                    </li>
-                    <li>
-                        <img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3bowegj30zk0dw41j.jpg" />
-                    </li>
+                    {% for p in introduceimages %}
+                        <li><img src="{{ p.url|safe }}" /></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
         <div class="content">
-            <div class="group">
-                <div class="group-title">
-                    <div class="g-title">
+            {% for q in group_list %}
+                <div class="group">
+                    <div class="group-title">
                         <div class="g-title">
-                            <div class="t-img" style="background: #eb4c4c;">G</div>
-                            <div class="t-name">GAME</div>
+                            <div class="t-img" style="background: {{ q.logo_color|safe }};">{{ q.title_logo }}</div>
+                            <div class="t-name">{{ q.g_title }}</div>
                         </div>
+                        <div class="g-more"><a href="{{ q.url|safe }}">MORE</a></div>
                     </div>
-                    <div class="g-more"><a href="#">MORE</a></div>
-                </div>
-                <div class="group-txt">
-                    <div class="l-group" id="l-one">
-                        <a href=""><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" /></a>
-                        <div class="l-info">
-                            <p><strong>oHitx</strong></p>
-                            <p style="font-size: 12px;">这是啥O玩意儿啊？你让我写个X啊！</p>
-                        </div>
-                    </div>
-                    <div class="l-group">
-                        <a href=""><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad3amppij30ci060gmb.jpg" /></a>
-                        <div class="l-info">
-                            <p><strong>七彩之光</strong></p>
-                            <p style="font-size: 12px;">这才是战棋游戏！</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="line"></div>
-            <div class="group">
-                <div class="group-title">
-                    <div class="g-title">
-                        <div class="g-title">
-                            <div class="t-img" style="background: #af3dea;">I</div>
-                            <div class="t-name">INFORMATION</div>
-                        </div>
-                    </div>
-                    <div class="g-more"><a href="#">MORE</a></div>
-                </div>
-                <div class="group-txt">
-                    <div class="m-group" id="m-one">
-                        <a href=""><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" /></a>
-                        <div class="m-info">公司简介</div>
-                    </div>
-                    <div class="m-group" id="m-one">
-                        <a href=""><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtesu1hj30860603yq.jpg" /></a>
-                        <div class="m-info">公司理念</div>
-                    </div>
-                    <div class="m-group">
-                        <a href=""><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" /></a>
-                        <div class="m-info">公司目标</div>
+                    <div class="group-txt">
+                        {% for m in q.info_list %}
+                            <div class="{{ m.info_class|safe }}" id="{{ m.info_id|safe }}">
+                                <a href="{{ m.url|safe }}"><img src="{{ m.image_url|safe }}" /></a>
+                                <div class="{{ m.txt_class|safe }}">
+                                    {% if m.value != "" %}
+                                        <p><a href="{{ m.url|safe }}"><strong>{{ m.title }}</strong></a></p>
+                                        <p style="font-size: 12px;">{{ m.value }}</p>
+                                    {% else %}
+                                        <strong><a href="{{ m.url|safe }}">{{ m.title }}</a></strong>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
-            </div>
-            <div class="line"></div>
-            <div class="group">
-                <div class="group-title">
-                    <div class="g-title">
-                        <div class="t-img" style="background: #4c91eb;">M</div>
-                        <div class="t-name">MEMBER</div>
-                    </div>
-                    <div class="g-more"><a href="#">MORE</a></div>
-                </div>
-                <div class="group-txt">
-                    <div class="sm-group" id="sm-one">
-                        <a href=""><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3azt60j3060060jr7.jpg" /></a>
-                        <div class="sm-info">
-                            <p>UkiyoESoragoto</p>
-                            <p>所谓灵魂 几行代码</p>
-                        </div>
-                    </div>
-                    <div class="sm-group" id="sm-one">
-                        <a href=""><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evad397rwsj3060060weq.jpg" /></a>
-                        <div class="sm-info">
-                            <p>AttackJZ</p>
-                            <p>进翰的击子很机智</p>
-                        </div>
-                    </div>
-                    <div class="sm-group" id="sm-one">
-                        <a href=""><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39zxblj3060060dft.jpg" /></a>
-                        <div class="sm-info">
-                            <p>NicholasWei</p>
-                            <p>致虚极守静笃</p>
-                        </div>
-                    </div>
-                    <div class="sm-group">
-                        <a href=""><img src="http://ww3.sinaimg.cn/mw690/006bwLnEgw1evad38vfrsj3060060dfv.jpg" /></a>
-                        <div class="sm-info">
-                            <p>Joseph Lee</p>
-                            <p>哦，这是我的签名</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% if q.default %}
+                    <div class="line"></div>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="footer">
             <div class="center-footer">
                 <div class="left">
-                    <a href="#">CONTACT US</a>|
+                    <a href="#">LANGUAGE</a>|
                     <a href="#">POWERED BY</a>
                 </div>
                 <div class="right">

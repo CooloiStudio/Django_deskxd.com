@@ -9,7 +9,7 @@ class GroupInfoAdmin(admin.ModelAdmin):
     list_display = ('code', 'title', 'info_class', )
 
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ('code', 'title', 'group_class', )
+    list_display = ('code', 'title', )
 
 
 admin.site.register(models.IntroduceImage, IntroduceImageAdmin)
