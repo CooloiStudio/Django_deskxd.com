@@ -1,18 +1,28 @@
 {% extends 'Base.html' %}
 {% load static from staticfiles %}
 {% block content %}
+    <script>
+        $(function() {
+            $('.flexslider').flexslider({
+                directionNav: true,
+                pauseOnAction: false
+            });
+        });
+    </script>
     <div class="wall">
         <div class="header">
-            <div class="logo">
-                <div id="lang"><strong>贤　卓　·　成　都</strong></div>
-                <div id="olang">DeskXD Chengdu　|　賢卓　成都</div>
-            </div>
-            <div class="guider">
-                <a href="#" id="home"><div>Home</div></a>
-                <a href="#" id="game"><div>Game</div></a>
-                <a href="#" id="information"><div>Information</div></a>
-                <a href="#" id="member"><div>Member</div></a>
-                <a href="#" id="contact"><div>Contact</div></a>
+            <div class="center-title">
+                <div class="logo">
+                    <div id="lang"><strong>贤　卓　·　成　都</strong></div>
+                    <div id="olang">DeskXD Chengdu　|　賢卓　成都</div>
+                </div>
+                <div class="guider">
+                    <a href="{% url 'home:index' %}" id="home"><div>Home</div></a>
+                    <a href="/game" id="game"><div>Game</div></a>
+                    <a href="/information" id="information"><div>Information</div></a>
+                    <a href="/member" id="member"><div>Member</div></a>
+                    <a href="/contact" id="contact"><div>Contact</div></a>
+                </div>
             </div>
         </div>
         <div class="introduc">

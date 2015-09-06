@@ -5,7 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 
 class IndexView(generic.View):
-    templates_file = 'GameIndex.html'
+    templates_file = 'Index.html'
 
     def get(self, request):
 
