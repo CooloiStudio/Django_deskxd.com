@@ -10,21 +10,28 @@
         });
     </script>
     <div class="wall">
-        <div class="header">
-            <div class="center-title">
-                <div class="logo">
-                    <div id="lang"><strong>贤　卓　·　成　都</strong></div>
-                    <div id="olang">DeskXD Chengdu　|　賢卓　成都</div>
+        <nav class="navbar navbar-default" id="navbar-content">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button id="mobile-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbar-brand" href="/" style="font-size: 24px;">DeskXD Chengdu</a>
                 </div>
-                <div class="guider">
-                    <a href="{% url 'home:index' %}" id="home"><div>Home</div></a>
-                    <a href="/game" id="game"><div>Game</div></a>
-                    <a href="/information" id="information"><div>Information</div></a>
-                    <a href="/member" id="member"><div>Member</div></a>
-                    <a href="/contact" id="contact"><div>Contact</div></a>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{% url 'home:index' %}" id="home">HOME</a></li>
+                        <li><a href="/game" id="game">GAME</a></li>
+                        <li><a href="/information" id="information">INFORMATION</a></li>
+                        <li><a href="/member" id="member">MEMBER</a></li>
+                        <li><a href="/contact" id="contact">CONTACT</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <div class="introduc">
             <div class="flexslider">
                 <ul class="slides">

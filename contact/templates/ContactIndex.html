@@ -15,88 +15,57 @@
 </head>
 <body>
     <div class="wall">
-        <div class="header" style="background: #eab33d;">
-            <div class="center-title">
-                <div class="logo">
-                    <div id="lang"><strong>贤　卓　·　成　都</strong></div>
-                    <div id="olang">DeskXD Chengdu　|　賢卓　成都</div>
+        <div class="header" style="background: #145567;">
+            <nav class="navbar navbar-default" id="navbar-content" style="background: #145567;">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button id="mobile-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                        <a class="navbar-brand" href="/" style="font-size: 24px;">DeskXD Chengdu</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="{% url 'home:index' %}" id="home">HOME</a></li>
+                            <li><a href="/game" id="game">GAME</a></li>
+                            <li><a href="/information" id="information">INFORMATION</a></li>
+                            <li><a href="/member" id="member">MEMBER</a></li>
+                            <li><a href="/contact" id="contact">CONTACT</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="guider">
-                    <a href="{% url 'home:index' %}" id="home"><div>Home</div></a>
-                    <a href="/game" id="game"><div>Game</div></a>
-                    <a href="/information" id="information"><div>Information</div></a>
-                    <a href="/member" id="member"><div>Member</div></a>
-                    <a href="/contact" id="contact"><div>Contact</div></a>
+            </nav>
+        </div>
+        <div class="game-title" style="color: #145567; border-bottom: 2px solid #145567;">CONTACT</div>
+        <div class="content">
+            <div class="info-left">
+                <div class="info">
+                    <div class="left-text" id="email">deskxd@outlook.com</div>
+                    <div class="left-logo" id="l-email"><span class="glyphicon glyphicon-envelope" style="color: #fafafa; font-size: 20px;"></span></div>
+                </div>
+                <div class="info">
+                    <div class="left-text" id="sina"><a href="http://weibo.com/deskxd">weibo.com/deskxd</a></div>
+                    <div class="left-logo" id="l-sina"><img src="{% static 'deskxd_com/images/sina.png' %}" width="24px" style="margin-top: -6px;" /></div>
                 </div>
             </div>
-        </div>
-        <div class="game-title" style="color: #eab33d; border-bottom: 2px solid #eab33d;">CONTACT</div>
-        <div class="content">
-{#            <div class="contact-info">#}
-{#                <div class="contact-title">成都贤卓新信息技术有限公司</div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">邮箱地址</div>#}
-{#                    <div class="info-info">deskxd@outlook.com</div>#}
-{#                </div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">新浪微博</div>#}
-{#                    <div class="info-info"><a href="http://weibo.com/deskxd">成都贤卓新信息技术有限公司</a></div>#}
-{#                </div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">公司网站</div>#}
-{#                    <div class="info-info"><a href="http://www.deskxd.com">www.deskxd.com</a></div>#}
-{#                </div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">联系电话</div>#}
-{#                    <div class="info-info">1888888888888888</div>#}
-{#                </div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">公司地址</div>#}
-{#                    <div class="info-info">四川省成都市锦江区岳府街38号</div>#}
-{#                </div>#}
-{#                <div class="infos">#}
-{#                    <div class="info-name">邮政编码</div>#}
-{#                    <div class="info-info">611000</div>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="contact-img">#}
-{#                <img src="{% static 'deskxd_com/images/OverDesk.png' %}"/>#}
-{#                <img />#}
-{#            </div>#}
-            <div class="contact-title">成都贤卓新信息技术有限公司</div>
-            <div class="contact-info">
-                <div class="contact-left">
-                    <div class="info-left">
-                        <div class="infos">
-                            <div class="info-name">邮箱地址</div>
-                            <div class="info-info">deskxd@outlook.com</div>
-                        </div>
-                        <div class="infos">
-                            <div class="info-name">邮箱地址</div>
-                            <div class="info-info">deskxd@outlook.com</div>
-                        </div>
-                        <div class="infos">
-                            <div class="info-name">邮箱地址</div>
-                            <div class="info-info">deskxd@outlook.com</div>
-                        </div>
-                    </div>
-                    <div class="info-center">
-                        <img src="{% static 'deskxd_com/images/OverDesk.png' %}"/>
-                    </div>
+            <div class="contact-img">
+                <img src="{% static 'deskxd_com/images/OverDesk.png' %}" width="200px"/>
+                <div class="img-title">贤　卓　·　成　都</div>
+                <div class="erweima">
+                    <img src="{% static 'deskxd_com/images/erweima.png' %}" width="300px" />
                 </div>
-                <div class="contact-right">
-                    <div class="infos">
-                        <div class="info-name">邮箱地址</div>
-                        <div class="info-info">deskxd@outlook.com</div>
-                    </div>
-                    <div class="infos">
-                        <div class="info-name">邮箱地址</div>
-                        <div class="info-info">deskxd@outlook.com</div>
-                    </div>
-                    <div class="infos">
-                        <div class="info-name">邮箱地址</div>
-                        <div class="info-info">deskxd@outlook.com</div>
-                    </div>
+            </div>
+            <div class="info-right">
+                <div class="info">
+                    <div class="right-logo" id="l-web"><span class="glyphicon glyphicon-home" style="color: #fafafa; font-size: 20px;"></span></div>
+                    <div class="right-text" id="web"><a href="http://www.deskxd.com">www.deskxd.com</a></div>
+                </div>
+                <div class="info">
+                    <div class="right-logo" id="l-address"><span class="glyphicon glyphicon-map-marker" style="color: #fafafa; font-size: 20px;"></span></div>
+                    <div class="right-text" id="address">四川省成都市锦江区岳府街38号</div>
                 </div>
             </div>
         </div>
@@ -115,3 +84,31 @@
     </div>
 </body>
 </html>
+<script>
+    $(document).ready(function(){
+        $("#l-email").mouseover(function(){
+            $("#email").fadeIn();
+        });
+        $("#l-email").mouseout(function(){
+            $("#email").fadeOut();
+        });
+        $("#l-sina").mouseover(function(){
+            $("#sina").fadeIn();
+        });
+        $("#l-sina").mouseout(function(){
+            $("#sina").fadeOut();
+        });
+        $("#l-web").mouseover(function(){
+            $("#web").fadeIn();
+        });
+        $("#l-web").mouseout(function(){
+            $("#web").fadeOut();
+        });
+        $("#l-address").mouseover(function(){
+            $("#address").fadeIn();
+        });
+        $("#l-address").mouseout(function(){
+            $("#address").fadeOut();
+        });
+    })
+</script>
