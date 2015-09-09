@@ -106,6 +106,42 @@ body{
 	margin-top: 20px;
 	border: 1px dotted #eb4c4c;
 }
+.g-name{
+	width: 430px;
+	padding-left: 20px;
+	height: 65px;
+	line-height: 65px;
+	font-size: 25px;
+	font-weight: 800;
+	color: #eb4c4c;
+}
+.g-txt{
+	width: 390px;
+	margin: auto;
+	height: 155px;
+	font-size: 16px;
+	text-align: justify;
+	overflow: hidden;
+}
+.g-more{
+	width: 390px;
+	margin: auto;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 400;
+	height: 40px;
+	padding-top: 5px;
+}
+.g-more a{
+	color: #eb4c4c;
+}
+.g-more a:link{
+	text-decoration: none;
+	color: #eb4c4c;
+}
+.g-more a:hover{
+	color: #eb4c4c;
+}
 
 
 .personal-left{
