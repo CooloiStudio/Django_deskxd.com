@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>成都贤卓新信息技术有限公司</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/otherstyle.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/contact_style.css' %}"/>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -15,8 +15,8 @@
 </head>
 <body>
     <div class="wall">
-        <div class="header" style="background: #145567;">
-            <nav class="navbar navbar-default" id="navbar-content" style="background: #145567;">
+        <div class="header">
+            <nav class="navbar navbar-default" id="navbar-content">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button id="mobile-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -39,16 +39,16 @@
                 </div>
             </nav>
         </div>
-        <div class="game-title" style="color: #145567; border-bottom: 2px solid #145567;">CONTACT</div>
+        <div class="menu-title">CONTACT</div>
         <div class="content">
             <div class="info-left">
-                <div class="info">
+                <div class="info" id="c-email">
                     <div class="left-text" id="email">deskxd@outlook.com</div>
-                    <div class="left-logo" id="l-email"><span class="glyphicon glyphicon-envelope" style="color: #fafafa; font-size: 20px;"></span></div>
+                    <img src="{% static 'deskxd_com/images/mail.png' %}" id="l-email" />
                 </div>
-                <div class="info">
+                <div class="info" id="c-sina">
                     <div class="left-text" id="sina"><a href="http://weibo.com/deskxd">weibo.com/deskxd</a></div>
-                    <div class="left-logo" id="l-sina"><img src="{% static 'deskxd_com/images/sina.png' %}" width="24px" style="margin-top: -6px;" /></div>
+                    <img src="{% static 'deskxd_com/images/sina.png' %}" id="l-sina" />
                 </div>
             </div>
             <div class="contact-img">
@@ -59,18 +59,18 @@
                 </div>
             </div>
             <div class="info-right">
-                <div class="info">
-                    <div class="right-logo" id="l-web"><span class="glyphicon glyphicon-home" style="color: #fafafa; font-size: 20px;"></span></div>
+                <div class="info" id="c-web">
+                    <img src="{% static 'deskxd_com/images/home.png' %}" id="l-web" />
                     <div class="right-text" id="web"><a href="http://www.deskxd.com">www.deskxd.com</a></div>
                 </div>
-                <div class="info">
-                    <div class="right-logo" id="l-address"><span class="glyphicon glyphicon-map-marker" style="color: #fafafa; font-size: 20px;"></span></div>
+                <div class="info" id="c-address">
+                    <img src="{% static 'deskxd_com/images/address.png' %}" id="l-address" />
                     <div class="right-text" id="address">四川省成都市锦江区岳府街38号</div>
                 </div>
             </div>
         </div>
         <div id="footer-line"></div>
-        <div class="footer" id="contact-footer">
+        <div class="footer">
             <div class="center-footer">
                 <div class="left">
                     <a href="#">LANGUAGE</a>|
@@ -86,28 +86,28 @@
 </html>
 <script>
     $(document).ready(function(){
-        $("#l-email").click(function(){
+        $("#l-email").mouseover(function(){
             $("#email").fadeIn();
         });
-        $("#email").mouseout(function(){
+        $("#c-email").mouseleave(function(){
             $("#email").fadeOut();
         });
-        $("#l-sina").click(function(){
+        $("#l-sina").mouseover(function(){
             $("#sina").fadeIn();
         });
-        $("#sina").mouseout(function(){
+        $("#c-sina").mouseleave(function(){
             $("#sina").fadeOut();
         });
-        $("#l-web").click(function(){
+        $("#l-web").mouseover(function(){
             $("#web").fadeIn();
         });
-        $("#web").mouseout(function(){
+        $("#c-web").mouseleave(function(){
             $("#web").fadeOut();
         });
-        $("#l-address").click(function(){
+        $("#l-address").mouseover(function(){
             $("#address").fadeIn();
         });
-        $("#address").mouseout(function(){
+        $("#c-address").mouseleave(function(){
             $("#address").fadeOut();
         });
     })

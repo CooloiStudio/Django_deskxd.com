@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>成都贤卓新信息技术有限公司</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/otherstyle.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/member_style.css' %}"/>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -15,8 +15,8 @@
 </head>
 <body>
     <div class="wall">
-        <div class="header" style="background: #a387da;">
-            <nav class="navbar navbar-default" id="navbar-content" style="background: #a387da;">
+        <div class="header">
+            <nav class="navbar navbar-default" id="navbar-content">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <button id="mobile-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -39,15 +39,8 @@
                 </div>
             </nav>
         </div>
-        <div class="game-title" style="color: #a387da; border-bottom: 2px solid #a387da;">MEMBER</div>
+        <div class="menu-title">MEMBER</div>
         <div class="content">
-{#            <div class="personal" id="rm">#}
-{#                <div class="head-portrait"><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3azt60j3060060jr7.jpg" /></div>#}
-{#                <div class="personal-txt">#}
-{#                    <p style="padding-top: 3px; font-size: 14px">UkiyoESoragoto</p>#}
-{#                    <p style="margin-top: -10px; font-size: 10px">技术总监</p>#}
-{#                </div>#}
-{#            </div>#}
             <div class="personal-left">
                 <div class="personal">
                     <div class="head-img">
@@ -104,7 +97,7 @@
             </div>
         </div>
         <div id="footer-line"></div>
-        <div class="footer" id="member-footer">
+        <div class="footer">
             <div class="center-footer">
                 <div class="left">
                     <a href="#">LANGUAGE</a>|
@@ -118,9 +111,3 @@
     </div>
 </body>
 </html>
-<script>
-    function PInfo()
-    {
-        $("#p-info").fadeIn()
-    }
-</script>

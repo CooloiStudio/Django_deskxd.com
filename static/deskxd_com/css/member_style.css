@@ -1,0 +1,154 @@
+html{
+	background: #fafafa;
+}
+body{
+	color: #2C3E50;
+	font-size: 16px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.wall{
+	background: #fafafa;
+	width: 100%;
+	z-index: 1;
+}
+
+.header{
+	height: 100px;
+	width: 100%;
+	padding-top: 25px;
+	background: #a387da;
+}
+#navbar-content{
+	border: none;
+	border-radius: 0px;
+	margin: auto;
+	max-width: 960px;
+	color: #fafafa;
+	background: #a387da;
+}
+#navbar-content a{
+	color: #fafafa;
+}
+#mobile-button{
+	border-radius: 0px;
+}
+
+.menu-title{
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+	height: 80px;
+	line-height: 80px;
+	font-size: 40px;
+	text-align: center;
+    font-weight: 800;
+	color: #a387da;
+	border-bottom: 2px solid #a387da;
+}
+
+.content{
+	width: 100%;
+	max-width: 920px;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+
+.personal-left{
+	float: left;
+	width: 296px;
+	margin-right: 16px;
+}
+.personal-center{
+	float: left;
+	width: 296px;
+}
+.personal-right{
+	float: right;
+	width: 296px;
+	height: 40px;
+}
+.personal{
+	width: 296px;
+	border: 2px solid #a387da;
+	margin-bottom: 15px;
+}
+.head-img{
+	width: 292px;
+	height: 292px;
+}
+.head-img img{
+	width: 292px;
+	height: 292px;
+}
+.member-name{
+	width: 292px;
+	padding-top: 5px;
+	padding-left: 10px;
+	font-size: 20px;
+	background: #a387da;
+	color: #fafafa;
+}
+.member-job{
+	width: 292px;
+	padding-left: 10px;
+	font-size: 14px;
+	background: #a387da;
+	color: #fafafa;
+}
+.introduce{
+	width: 292px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	font-size: 16px;
+	background: #a387da;
+	color: #fafafa;
+}
+
+
+#footer-line{
+	clear: both;
+	width: 100%;
+}
+.footer{
+	clear: both;
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	color: #2C3E50;
+	margin-top: 50px;
+	background: url("../images/member-footer.png");
+	background-repeat: repeat-x;
+}
+.center-footer{
+	width: 75%;
+	max-width: 920px;
+	margin: 0 auto;
+}
+.footer a{
+	color: #2C3E50;
+	margin-left: 5px;
+	margin-right: 10px;
+	text-decoration: underline !important;
+}
+.footer a:link{
+	color: #2C3E50;
+}
+.footer a:hover{
+	color: #2C3E50;
+}
+.footer a:visited{
+	color: #2C3E50;
+}
+.footer .left{
+	float: left;
+	margin-top: 25px;
+}
+.footer .right{
+	float: right;
+	margin-top: 25px;
+}
