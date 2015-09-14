@@ -11,7 +11,7 @@
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="{% static 'deskxd_com/js/jquery.flexslider.js' %}"></script>
-    <script src="{% static 'deskxd_com/js/jquery.main.js' %}"></script>
+    <script src="{% static 'deskxd_com/js/jquery.information.js' %}"></script>
 </head>
 <body>
     <div class="wall">
@@ -52,8 +52,8 @@
                     <div>公司目标</div>
                 </div>
                 <div class="company-txt" id="c-txt">
-                    <div style="display: block;">
-                        　　做自己会玩的游戏！
+                    <div style="display: block;" id="ln">
+                        做自己会玩的游戏
                     </div>
                     <div>
                         　　2014年，几位年轻的创业合伙人对游戏市场兴趣颇深，想做一款属于自己的游戏，后策划得到了肯定，便召集几位游戏开发爱好者一同尝试开发，经过几个月的商讨与努力，制作出可行方案。
@@ -83,24 +83,3 @@
     </div>
 </body>
 </html>
-<script>
-    window.onload=function(){
-        var cmenu = document.getElementById("c-menu");
-        var ctxt = document.getElementById("c-txt");
-        var ctitle = cmenu.getElementsByTagName("div");
-        var ctext = ctxt.getElementsByTagName("div");
-        for (var i=0;i<ctitle.length;i++)
-        {
-            ctitle[i].index=i;
-            ctitle[i].onclick=function(){
-                for (var i=0; i<ctitle.length; i++)
-                {
-                    ctitle[i].id="";
-                    ctext[i].style.display="none";
-                }
-                this.id="company-active"
-                ctext[this.index].style.display="block";
-            }
-        }
-    }
-</script>

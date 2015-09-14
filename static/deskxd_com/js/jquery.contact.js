@@ -1,0 +1,26 @@
+$(document).ready(function(){
+    $("#l-email").mouseover(function(){
+        $("#email").fadeIn();
+    });
+    $("#c-email").mouseleave(function(){
+        $("#email").fadeOut();
+    });
+    $("#l-sina").mouseover(function(){
+        $("#sina").fadeIn();
+    });
+    $("#c-sina").mouseleave(function(){
+        $("#sina").fadeOut();
+    });
+    $("#l-web").mouseover(function(){
+        $("#web").fadeIn();
+    });
+    $("#c-web").mouseleave(function(){
+        $("#web").fadeOut();
+    });
+    $("#l-address").mouseover(function(){
+        $("#address").fadeIn();
+    });
+    $("#c-address").mouseleave(function(){
+        $("#address").fadeOut();
+    });
+})
