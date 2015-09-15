@@ -53,7 +53,7 @@
                 </div>
                 <div class="company-txt" id="c-txt">
                     {% for q in infos %}
-                        <div id="{{ q.info_id|safe }}">{{ q.introduce }}</div>
+                        <div id="{{ q.info_id|safe }}">{{ q.introduce|safe }}</div>
                     {% endfor %}
                 </div>
             </div>
