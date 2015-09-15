@@ -41,33 +41,35 @@
         </div>
         <div class="menu-title">CONTACT</div>
         <div class="content">
-            <div class="info-left">
-                <div class="info" id="c-email">
-                    <div class="left-text" id="email">deskxd@outlook.com</div>
-                    <img src="{% static 'deskxd_com/images/mail.png' %}" id="l-email" />
+            {% for p in contacts %}
+                <div class="info-left">
+                    <div class="info" id="c-email">
+                        <div class="left-text" id="email">{{ p.email }}</div>
+                        <img src="{% static 'deskxd_com/images/mail.png' %}" id="l-email" />
+                    </div>
+                    <div class="info" id="c-sina">
+                        <div class="left-text" id="sina"><a href="http://{{ p.sina|safe }}">{{ p.sina }}</a></div>
+                        <img src="{% static 'deskxd_com/images/sina.png' %}" id="l-sina" />
+                    </div>
                 </div>
-                <div class="info" id="c-sina">
-                    <div class="left-text" id="sina"><a href="http://weibo.com/deskxd">weibo.com/deskxd</a></div>
-                    <img src="{% static 'deskxd_com/images/sina.png' %}" id="l-sina" />
+                <div class="contact-img">
+                    <img src="{% static 'deskxd_com/images/OverDesk.png' %}" width="200px"/>
+                    <div class="img-title">贤　卓　·　成　都</div>
+                    <div class="erweima">
+                        <img src="{% static 'deskxd_com/images/erweima.png' %}" width="300px" />
+                    </div>
                 </div>
-            </div>
-            <div class="contact-img">
-                <img src="{% static 'deskxd_com/images/OverDesk.png' %}" width="200px"/>
-                <div class="img-title">贤　卓　·　成　都</div>
-                <div class="erweima">
-                    <img src="{% static 'deskxd_com/images/erweima.png' %}" width="300px" />
+                <div class="info-right">
+                    <div class="info" id="c-web">
+                        <img src="{% static 'deskxd_com/images/home.png' %}" id="l-web" />
+                        <div class="right-text" id="web"><a href="http://{{ p.webpage|safe }}">{{ p.webpage }}</a></div>
+                    </div>
+                    <div class="info" id="c-address">
+                        <img src="{% static 'deskxd_com/images/address.png' %}" id="l-address" />
+                        <div class="right-text" id="address">{{ p.address }}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="info-right">
-                <div class="info" id="c-web">
-                    <img src="{% static 'deskxd_com/images/home.png' %}" id="l-web" />
-                    <div class="right-text" id="web"><a href="http://www.deskxd.com">www.deskxd.com</a></div>
-                </div>
-                <div class="info" id="c-address">
-                    <img src="{% static 'deskxd_com/images/address.png' %}" id="l-address" />
-                    <div class="right-text" id="address">四川省成都市锦江区岳府街38号</div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
         <div id="footer-line"></div>
         <div class="footer">

@@ -1,3 +1,5 @@
+@import "font-style.css";
+
 html{
 	background: #fafafa;
 }
@@ -28,9 +30,18 @@ body{
 	max-width: 960px;
 	color: #fafafa;
 	background: #a387da;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 #navbar-content a{
 	color: #fafafa;
+}
+#navbar-content li a:hover{
+	color: #a387da;
+	background: #fafafa;
 }
 #mobile-button{
 	border-radius: 0px;
@@ -47,6 +58,11 @@ body{
     font-weight: 800;
 	color: #a387da;
 	border-bottom: 2px solid #a387da;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .content{
@@ -54,6 +70,11 @@ body{
 	max-width: 920px;
 	margin: 0 auto;
 	margin-top: 10px;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .personal-left{

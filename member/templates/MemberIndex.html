@@ -42,34 +42,40 @@
         <div class="menu-title">MEMBER</div>
         <div class="content">
             <div class="personal-left">
-                <div class="personal">
-                    <div class="head-img">
-                        <img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3azt60j3060060jr7.jpg" />
+                {% for p in group_one %}
+                    <div class="personal">
+                        <div class="head-img">
+                            <a href="{{ p.url|safe }}"><img src="{{ p.img|safe }}" /></a>
+                        </div>
+                        <div class="member-name">{{ p.name }}</div>
+                        <div class="member-job">{{ p.job }}</div>
+                        <div class="introduce">{{ p.introduce }}</div>
                     </div>
-                    <div class="member-name">UkiyoESoragoto</div>
-                    <div class="member-job">技术总监</div>
-                    <div class="introduce">技术总监 技术总监技术总监　技术总监　技术总监　技术总监技术总监技术总监技术总监技术总监技术总监技术总监技术总监技术总监</div>
-                </div>
+                {% endfor %}
             </div>
             <div class="personal-center">
-                <div class="personal">
-                    <div class="head-img">
-                        <img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3azt60j3060060jr7.jpg" />
+                {% for p in group_two %}
+                    <div class="personal">
+                        <div class="head-img">
+                            <a href="{{ p.url|safe }}"><img src="{{ p.img|safe }}" /></a>
+                        </div>
+                        <div class="member-name">{{ p.name }}</div>
+                        <div class="member-job">{{ p.job }}</div>
+                        <div class="introduce">{{ p.introduce }}</div>
                     </div>
-                    <div class="member-name">UkiyoESoragoto</div>
-                    <div class="member-job">技术总监</div>
-                    <div class="introduce">技术总监技术总术总监技术总监技术总监技术总监技术总监技术总监技术总监</div>
-                </div>
+                {% endfor %}
             </div>
             <div class="personal-right">
-                <div class="personal">
-                    <div class="head-img">
-                        <img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3azt60j3060060jr7.jpg" />
+                {% for p in group_three %}
+                    <div class="personal">
+                        <div class="head-img">
+                            <a href="{{ p.url|safe }}"><img src="{{ p.img|safe }}" /></a>
+                        </div>
+                        <div class="member-name">{{ p.name }}</div>
+                        <div class="member-job">{{ p.job }}</div>
+                        <div class="introduce">{{ p.introduce }}</div>
                     </div>
-                    <div class="member-name">UkiyoESoragoto</div>
-                    <div class="member-job">技术总监</div>
-                    <div class="introduce">技术总监 技术总监技术总监　技术总监技术总监技术总监技术总监技术总监技术总监技术总监技术总监</div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div id="footer-line"></div>

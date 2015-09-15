@@ -41,36 +41,41 @@
         </div>
         <div class="menu-title">GAME</div>
         <div class="content">
-            <div class="group">
-                <div class="left-group">
-                    <a href="#"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad3amppij30ci060gmb.jpg" /></a>
-                </div>
-                <div class="right-group">
-                    <div class="time-line">
-                        <img src="{% static 'deskxd_com/images/y-line.png' %}">
+            {% for p in game_list %}
+                {% if p.group == 0 %}
+                <div class="group">
+                    <div class="left-group">
+                        <a href="{{ p.url }}"><img src="{{ p.img }}" /></a>
                     </div>
-                    <div class="game-right">
-                        <div class="g-name">七彩之光</div>
-                        <div class="g-txt">　　《七彩之光》是贤卓成立首款主打手游，是一款策略型战旗游戏，采用Cocos-2D引擎，用唯美的画风、创意的诸多玩点，为玩家展示一个更广阔、内容更丰富的魔幻战旗新世界。</div>
-                        <div class="g-more"><a href="">MORE</a></div>
-                    </div>
-                </div>
-            </div>
-            <div class="group">
-                <div class="game-left">
-                    <div class="g-name">oHitx</div>
-                    <div class="g-txt">　　《oHitx》这其实就是个OOXX的游戏，没啥好介绍的，攻城狮每天都要玩儿的摔手机！反正我觉得没啥好玩儿的，不信你下载下来试试！</div>
-                    <div class="g-more"><a href="">MORE</a></div>
-                </div>
-                <div class="right-group">
-                    <div class="time-line">
-                        <img src="{% static 'deskxd_com/images/y-line.png' %}">
-                    </div>
-                    <div class="right-img">
-                        <a href="#"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" /></a>
+                    <div class="right-group">
+                        <div class="time-line">
+                            <img src="{% static 'deskxd_com/images/y-line.png' %}">
+                        </div>
+                        <div class="game-right">
+                            <div class="g-name"><a href="{{ p.url }}">{{ p.name }}</a></div>
+                            <div class="g-txt">　　{{ p.introduce }}</div>
+                            <div class="g-more"><a href="{{ p.url }}">MORE</a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                {% else %}
+                <div class="group">
+                    <div class="game-left">
+                        <div class="g-name"><a href="{{ p.url }}">{{ p.name }}</a></div>
+                        <div class="g-txt">　　{{ p.introduce }}</div>
+                        <div class="g-more"><a href="{{ p.url }}">MORE</a></div>
+                    </div>
+                    <div class="right-group">
+                        <div class="time-line">
+                            <img src="{% static 'deskxd_com/images/y-line.png' %}">
+                        </div>
+                        <div class="right-img">
+                            <a href="{{ p.url }}"><img src="{{ p.img }}" /></a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
         </div>
         <div id="footer-line"></div>
         <div class="footer">

@@ -47,24 +47,14 @@
             </div>
             <div class="company">
                 <div class="company-menu" id="c-menu">
-                    <div id="company-active">公司理念</div>
-                    <div>公司简介</div>
-                    <div>公司目标</div>
+                    {% for p in infos %}
+                        <div id="{{ p.menu_id|safe }}">{{ p.name }}</div>
+                    {% endfor %}
                 </div>
                 <div class="company-txt" id="c-txt">
-                    <div style="display: block;" id="ln">
-                        做自己会玩的游戏
-                    </div>
-                    <div>
-                        　　2014年，几位年轻的创业合伙人对游戏市场兴趣颇深，想做一款属于自己的游戏，后策划得到了肯定，便召集几位游戏开发爱好者一同尝试开发，经过几个月的商讨与努力，制作出可行方案。
-                           <br/>
-                        　　贤卓新信息技术有限公司成立于2015年2月，是一家以手机游戏为发展起点，集研发、运营、销售为一体的自主创业公司。
-                           </br>
-                        　　作为国内众多手游创业界的一员，公司始终保持着创业激情，全线员工为刚刚踏入社会的90后青年，并且不断纳入新鲜血液使得公司更加充满活力，从最开始的几位合伙人逐渐演变成一个小工作室，直到现在的公司成立。
-                    </div>
-                    <div>
-                        　　贤卓，取贤明、卓越的首字作为公司名，表达我们对公司的期望与决心，做到有智慧、有能力、卓尔不凡。贤卓秉承着创新的精神，一步步使公司走向未来。我们置信，经过不懈努力和力求完美的精神，定可让公司成为游戏行业卓越的新秀！
-                    </div>
+                    {% for q in infos %}
+                        <div id="{{ q.info_id|safe }}">{{ q.introduce }}</div>
+                    {% endfor %}
                 </div>
             </div>
         </div>

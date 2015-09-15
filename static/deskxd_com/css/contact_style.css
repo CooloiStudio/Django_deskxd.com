@@ -1,3 +1,5 @@
+@import "font-style.css";
+
 html{
 	background: #fafafa;
 }
@@ -28,9 +30,18 @@ body{
 	max-width: 960px;
 	color: #fafafa;
     background: #145567;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 #navbar-content a{
 	color: #fafafa;
+}
+#navbar-content li a:hover{
+	color: #145567;
+	background: #fafafa;
 }
 #mobile-button{
 	border-radius: 0px;
@@ -47,6 +58,11 @@ body{
     font-weight: 800;
 	color: #145567;
     border-bottom: 2px solid #145567;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .content{
@@ -165,6 +181,11 @@ body{
 	margin-top: 50px;
 	background: url("../images/contact-footer.png");
 	background-repeat: repeat-x;
+	font-family:"sy-bold" !important;
+	font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 .center-footer{
 	width: 75%;
