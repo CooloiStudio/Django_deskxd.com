@@ -42,35 +42,67 @@
             </div>
         </div>
         <div class="content">
-            {% for q in group_list %}
-                <div class="group">
-                    <div class="group-title">
-                        <div class="g-title">
-                            <div class="t-img" style="background: {{ q.logo_color|safe }};">{{ q.title_logo }}</div>
-                            <div class="t-name">{{ q.g_title }}</div>
-                        </div>
-                        <div class="g-more"><a href="{{ q.url|safe }}">MORE</a></div>
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <div class="t-img" style="background: #eb4c4c;">G</div>
+                        <div class="t-name">GAME</div>
                     </div>
-                    <div class="group-txt">
-                        {% for m in q.info_list %}
-                            <div class="{{ m.info_class|safe }}" id="{{ m.info_id|safe }}">
-                                <a href="{{ m.url|safe }}"><img src="{{ m.image_url|safe }}" /></a>
-                                <div class="{{ m.txt_class|safe }}">
-                                    {% if m.value != "" %}
-                                        <p><a href="{{ m.url|safe }}"><strong>{{ m.title }}</strong></a></p>
-                                        <p style="font-size: 12px;">{{ m.value }}</p>
-                                    {% else %}
-                                        <strong><a href="{{ m.url|safe }}">{{ m.title }}</a></strong>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
+                    <div class="g-more"><a href="/game/">MORE</a></div>
                 </div>
-                {% if q.default %}
-                    <div class="line"></div>
-                {% endif %}
-            {% endfor %}
+                <div class="group-txt">
+                    {% for g in game_list %}
+                        <div class="l-group" {% if g.i == 1 %}id="l-one"{% endif %}>
+                            <a href="{{ g.url|safe }}"><img src="{{ g.img|safe }}" /></a>
+                            <div class="l-info">
+                                <p><a href="{{ g.url|safe }}"><strong>{{ g.name }}</strong></a></p>
+                                <p style="font-size: 12px;">{{ g.abstract }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <div class="t-img" style="background: #4285f4;">I</div>
+                        <div class="t-name">INFORMATION</div>
+                    </div>
+                    <div class="g-more"><a href="/information/">MORE</a></div>
+                </div>
+                <div class="group-txt">
+                    {% for p in info_list %}
+                        <div class="m-group" {% if p.i == 1 %}id="m-one"{% endif %}>
+                            <a href="/information/"><img src="{{ p.img|safe }}" /></a>
+                            <div class="m-info">
+                                <strong><a href="/information/">{{ p.name }}</a></strong>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="group">
+                <div class="group-title">
+                    <div class="g-title">
+                        <div class="t-img" style="background: #a387da;">M</div>
+                        <div class="t-name">MEMBER</div>
+                    </div>
+                    <div class="g-more"><a href="/member/">MORE</a></div>
+                </div>
+                <div class="group-txt">
+                    {% for m in member_list %}
+                        <div class="sm-group" {% if m.i == 1 %}id="sm-one"{% endif %}>
+                            <a href="{{ m.url }}"><img src="{{ m.img|safe }}" /></a>
+                            <div class="sm-info">
+                                <p><a href="{{ m.url }}"><strong>{{ m.name }}</strong></a></p>
+                                <p style="font-size: 12px;">{{ m.signature }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
         <div class="footer">
             <div class="center-footer">
