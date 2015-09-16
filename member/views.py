@@ -8,15 +8,15 @@ class IndexView(generic.View):
 
     def get(self, request):
 
-        group_one = list(Members.objects.filter(group=1))
+        group_one = list(Member.objects.filter(group=1))
         if not group_one:
             group_one = []
 
-        group_two = list(Members.objects.filter(group=2))
+        group_two = list(Member.objects.filter(group=2))
         if not group_two:
             group_two = []
 
-        group_three = list(Members.objects.filter(group=3))
+        group_three = list(Member.objects.filter(group=3))
         if not group_three:
             group_three = []
 
