@@ -9,7 +9,7 @@ import random
 
 
 class IndexView(generic.View):
-    templates_file = 'Index.html'
+    templates_file = 'index.html'
 
     def get(self, request):
 
@@ -71,7 +71,8 @@ class IndexView(generic.View):
             'introduceimages': introduceimages,
             'game_list': game_list,
             'info_list': info_list,
-            'member_list': member_list
+            'member_list': member_list,
+            'games':games
         }
         return render(request,
                       self.templates_file,

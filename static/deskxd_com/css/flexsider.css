@@ -16,8 +16,9 @@
   text-transform: capitalize;
 }
 .flexslider {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: 90%;
 }
 .flexslider .slides > li {
   display: none;
@@ -156,12 +157,12 @@ html[xmlns] .flexslider .slides {
   margin: 0 6px;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  *display: none;
 }
 .flex-control-paging li a {
   width: 11px;
   height: 11px;
-  display: block;
+  display: none;
   background: #666;
   background: rgba(0, 0, 0, 0.5);
   cursor: pointer;
@@ -211,4 +212,10 @@ html[xmlns] .flexslider .slides {
 .flex-control-thumbs .flex-active {
   opacity: 1;
   cursor: default;
+}
+
+@media screen and (max-width: 736px) {
+  .flexslider{
+    display: none;
+  }
 }
