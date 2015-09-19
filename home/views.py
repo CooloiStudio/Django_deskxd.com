@@ -9,7 +9,7 @@ import random
 
 
 class IndexView(generic.View):
-    templates_file = 'index.html'
+    templates_file = 'Index.html'
 
     def get(self, request):
 
@@ -24,20 +24,17 @@ class IndexView(generic.View):
 
         # MEMBER
         members = list(Member.objects.all())
-        members = members[:2]
 
         random.shuffle(members)
 
-        i=4
+        i = 4
         members_list = []
         for p in members:
             if 0 >= i:
                 break;
-            members_list.append(p.code)
+            a = {'name': p.name, 'img': p.img, 'url': p.url, 'signature': p.signature}
+            members_list.append(a)
             i = i - 1
-
-
-        print members_list
 
         context = {
             'games': games,
