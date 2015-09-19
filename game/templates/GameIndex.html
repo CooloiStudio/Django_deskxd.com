@@ -1,94 +1,175 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-{% load static from staticfiles %}
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>成都贤卓新信息技术有限公司</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/game_style.css' %}"/>
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="http://cdn.staticfile.org/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="{% static 'deskxd_com/js/jquery.flexslider.js' %}"></script>
-    <script src="{% static 'deskxd_com/js/jquery.main.js' %}"></script>
-</head>
-<body>
-    <div class="wall">
-        <div class="header">
-            <nav class="navbar navbar-default" id="navbar-content">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <button id="mobile-button" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            </button>
-                        <a class="navbar-brand" href="/" style="font-size: 24px;">DeskXD Chengdu</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{% url 'home:index' %}" id="home">HOME</a></li>
-                            <li><a href="/game" id="game">GAME</a></li>
-                            <li><a href="/information" id="information">INFORMATION</a></li>
-                            <li><a href="/member" id="member">MEMBER</a></li>
-                            <li><a href="/contact" id="contact">CONTACT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="menu-title">GAME</div>
-        <div class="content">
-            {% for p in game_list %}
-                {% if p.group == 0 %}
-                <div class="group">
-                    <div class="left-group">
-                        <a href="{{ p.url }}"><img src="{{ p.img }}" /></a>
-                    </div>
-                    <div class="right-group">
-                        <div class="time-line">
-                            <img src="{% static 'deskxd_com/images/y-line.png' %}">
-                        </div>
-                        <div class="game-right">
-                            <div class="g-name"><a href="{{ p.url }}">{{ p.name }}</a></div>
-                            <div class="g-txt">　　{{ p.introduce }}</div>
-                            <div class="g-more"><a href="{{ p.url }}">MORE</a></div>
-                        </div>
-                    </div>
-                </div>
-                {% else %}
-                <div class="group">
-                    <div class="game-left">
-                        <div class="g-name"><a href="{{ p.url }}">{{ p.name }}</a></div>
-                        <div class="g-txt">　　{{ p.introduce }}</div>
-                        <div class="g-more"><a href="{{ p.url }}">MORE</a></div>
-                    </div>
-                    <div class="right-group">
-                        <div class="time-line">
-                            <img src="{% static 'deskxd_com/images/y-line.png' %}">
-                        </div>
-                        <div class="right-img">
-                            <a href="{{ p.url }}"><img src="{{ p.img }}" /></a>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <div id="footer-line"></div>
-        <div class="footer">
-            <div class="center-footer">
-                <div class="left">
-                    <a href="#">LANGUAGE</a>|
-                    <a href="#">POWERED BY</a>
-                </div>
-                <div class="right">
-                    Copyright © 2015 Deskxd.com
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+    {% load static from staticfiles %}
+	<head>
+		<title>成都贤卓新信息技术有限公司</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper" class="wrapper">
+					<div id="header">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="/">DeskXD Chengdu</a></h1>
+								<p>成都贤卓新信息技术有限公司</p>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="/">Home</a></li>
+									<li><a href="/information/">Infromation</a></li>
+									<li><a href="/game/">Game</a></li>
+									<li><a href="/member/">Member</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				<div class="wrapper style3">
+					<div class="title">Our Games</div>
+					<div id="main" class="container">
+
+						<!-- Image -->
+							<a href="#" class="image featured" style="margin-bottom: 100px !important;;">
+								<div class="flexslider" style="width: 100%; display: block !important;">
+                                    <ul class="slides">
+                                        <li><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3c9kpcj30zk0dwjvb.jpg" alt="" /></li>
+                                        <li><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3bowegj30zk0dw41j.jpg" alt="" /></li>
+                                    </ul>
+                                </div>
+							</a>
+
+						<!-- Features -->
+							<div id="highlights" class="container">
+                                <div class="row 150%">
+                                    <div class="4u 12u(mobile)">
+                                        <section class="highlight">
+                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad3amppij30ci060gmb.jpg" alt="" /></a>
+                                            <h3><a href="#">图兰卡之门</a></h3>
+                                            <p style="text-align: justify;">《图兰卡之门》是贤卓成立首款主打手游，是一款策略型战棋游戏，采用Cocos-2D引擎，用唯美的画风、创意的诸多玩点，为玩家展示一个更广阔、内容更丰富的魔幻战棋新世界。</p>
+                                        </section>
+                                    </div>
+                                    <div class="4u 12u(mobile)">
+                                        <section class="highlight">
+                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" alt="" /></a>
+                                            <h3><a href="#">Ohitx</a></h3>
+                                            <p style="text-align: justify;">《oHitx》这其实就是个OOXX的游戏，没啥好介绍的，攻城狮每天都要玩儿的摔手机！反正我觉得没啥好玩儿的，不信你下载下来试试！</p>
+                                        </section>
+                                    </div>
+                                    <div class="4u 12u(mobile)">
+                                        <section class="highlight">
+                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" alt="" /></a>
+                                            <h3><a href="#">Ohitx</a></h3>
+                                            <p style="text-align: justify;">《oHitx》这其实就是个OOXX的游戏，没啥好介绍的，攻城狮每天都要玩儿的摔手机！反正我觉得没啥好玩儿的，不信你下载下来试试！</p>
+                                        </section>
+                                    </div>
+                                </div>
+                            </div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper" class="wrapper">
+					<div class="title">Contact US</div>
+					<div id="footer" class="container">
+						<div class="row 150%">
+							<div class="6u 12u(mobile)">
+
+                            <!-- Contact Form -->
+                                <section>
+                                    <div style="text-align: center; margin-top: 30px;">
+                                        <img src="{% static 'deskxd_com/images/erweima.png' %}" />
+                                    </div>
+                                </section>
+
+							</div>
+							<div class="6u 12u(mobile)">
+                            <!-- Contact -->
+                                <section class="feature-list small">
+                                    <div class="row">
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-home">Mailing Address</h3>
+                                                <p>
+                                                    中国　四川　成都<br />
+                                                    1234 Somewhere Rd #987<br />
+                                                    Nashville, TN 00000-0000
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-comment">Social</h3>
+                                                <p>
+                                                    <a href="#">www.deskxd.com</a><br />
+                                                    <a href="#">deskxd/weibo.com</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-envelope">Email</h3>
+                                                <p>
+                                                    <a href="#">info@untitled.tld</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-phone">Phone</h3>
+                                                <p>
+                                                    (000) 555-0000
+                                                </p>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </section>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<div id="copyright">
+						<ul>
+							<li>&copy; DeskXD.com</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'deskxd/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel-viewport.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'deskxd/assets/js/main.js' %}"></script>
+            <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/flexsider.css' %}"/>
+            <script src="{% static 'deskxd_com/js/jquery.flexslider.js' %}"></script>
+            <script>
+                $(function() {
+                    $('.flexslider').flexslider({
+                        directionNav: true,
+                        pauseOnAction: false
+                    });
+                });
+            </script>
+
+	</body>
 </html>

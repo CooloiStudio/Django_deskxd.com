@@ -52,6 +52,10 @@
 		display: none;
 	}
 
+	.sina img{
+		width: 300px;
+	}
+
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1523,7 +1527,7 @@
 	}
 
 	.feature-list h3 {
-		color: #fafafa !important;
+		color: #e97770 !important;
 		height: 60px;
 		line-height: 60px;
 	}

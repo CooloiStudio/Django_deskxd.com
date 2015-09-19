@@ -8,22 +8,12 @@ class IndexView(generic.View):
 
     def get(self, request):
 
-        group_one = list(Member.objects.filter(group=1))
-        if not group_one:
-            group_one = []
-
-        group_two = list(Member.objects.filter(group=2))
-        if not group_two:
-            group_two = []
-
-        group_three = list(Member.objects.filter(group=3))
-        if not group_three:
-            group_three = []
+        members = list(Member.objects.all())
+        if not members:
+            members = []
 
         context = {
-            'group_one': group_one,
-            'group_two': group_two,
-            'group_three': group_three
+            'members': members
         }
         return render(request,
                       self.templates_file,
