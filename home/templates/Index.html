@@ -5,9 +5,9 @@
 		<title>成都贤卓新信息技术有限公司</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->
+{#		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->#}
 		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->
+{#		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->#}
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -38,21 +38,15 @@
 			<!-- Intro -->
                 <div class="wrapper style2">
                     <div class="title">Focus</div>
-                    <div id="content">
-                        <article class="box post">
-                            <a href="#" class="image featured">
-                                <div class="flexslider" style="margin-bottom: -100px !important;">
-                                    <ul class="slides">
-                                        {% for p in introduceimages %}
-                                            <li>
-                                                <img src="{{ p.url|safe }}" />
-                                                <p class="flex-caption">{{ p.name }}</p>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            </a>
-                        </article>
+                    <div class="flexslider" style="margin-bottom: -100px !important;">
+                        <ul class="slides">
+                            {% for p in introduceimages %}
+                                <li>
+                                    <a href=""><img src="{{ p.url|safe }}" /></a>
+                                    <p class="flex-caption">{{ p.name }}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     <div class="mobile-flexslider">
                         <header class="style1">
