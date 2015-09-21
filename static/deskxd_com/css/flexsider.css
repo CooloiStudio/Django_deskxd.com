@@ -217,7 +217,7 @@ html[xmlns] .flexslider .slides {
 }
 .flex-caption {
   width: 100%;
-  padding: 2%;
+  padding-top: 10%;
   left: 0;
   bottom: 0;
   /*background: #999999;*/
