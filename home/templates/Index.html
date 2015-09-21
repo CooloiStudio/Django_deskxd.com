@@ -38,18 +38,22 @@
 			<!-- Intro -->
                 <div class="wrapper style2">
                     <div class="title">Focus</div>
-                    <a href="#" class="image featured">
-                        <div class="flexslider">
-                            <ul class="slides">
-                                {% for p in introduceimages %}
-                                    <li>
-                                        <img src="{{ p.url|safe }}" />
-                                        <p class="flex-caption">{{ p.name }}</p>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </a>
+                    <div id="content">
+                        <article class="box post">
+                            <a href="#" class="image featured">
+                                <div class="flexslider">
+                                    <ul class="slides">
+                                        {% for p in introduceimages %}
+                                            <li>
+                                                <img src="{{ p.url|safe }}" />
+                                                <p class="flex-caption">{{ p.name }}</p>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
                     <div class="mobile-flexslider">
                         <header class="style1">
                             <h2>Our games</h2>
