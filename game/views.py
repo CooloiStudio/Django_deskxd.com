@@ -15,6 +15,8 @@ class IndexView(generic.View):
         gameimgs = list(GameImages.objects.all())
         if not gameimgs:
             gameimgs = []
+            print "no"
+        print "yes"
 
         context = {
             'games': games,
