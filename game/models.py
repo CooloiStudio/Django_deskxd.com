@@ -7,3 +7,8 @@ class Games(models.Model):
     name = models.CharField(max_length=50)
     abstract = models.CharField(max_length=150)
     introduce = models.TextField(null=True)
+
+class GameImages(models.Model):
+    code = models.IntegerField(unique=True,default=0)
+    img = models.CharField(max_length=300)
+    url = models.CharField(max_length=300)

@@ -44,8 +44,9 @@
 							<a href="#" class="image featured" style="margin-bottom: 100px !important;;">
 								<div class="flexslider" style="width: 100%; display: block !important;">
                                     <ul class="slides">
-                                        <li><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3c9kpcj30zk0dwjvb.jpg" alt="" /></li>
-                                        <li><img src="http://ww2.sinaimg.cn/large/006bwLnEgw1evad3bowegj30zk0dw41j.jpg" alt="" /></li>
+                                        {% for p in gameimgs %}
+                                        <li><a href="{{ p.url|safe }}"><img src="{{ p.img|safe }}" alt="" /></a></li>
+                                        {% endfor %}
                                     </ul>
                                 </div>
 							</a>
