@@ -14,7 +14,6 @@ class Migration(migrations.Migration):
             name='Member',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('group', models.IntegerField(default=1)),
                 ('code', models.IntegerField(unique=True)),
                 ('name', models.CharField(max_length=100)),
                 ('job', models.CharField(max_length=100)),

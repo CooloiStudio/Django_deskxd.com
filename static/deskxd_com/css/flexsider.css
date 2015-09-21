@@ -69,6 +69,7 @@ html[xmlns] .flexslider .slides {
 }
 .loading .flex-viewport {
   max-height: 300px;
+  display: none;
 }
 .carousel li {
   margin-right: 5px;
@@ -218,8 +219,8 @@ html[xmlns] .flexslider .slides {
   padding: 2%;
   left: 0;
   bottom: 0;
-  background: #999999;
-  color: #fff;
+  /*background: #999999;*/
+  color: #000;
   text-shadow: 0 -1px 0 rgba(0,0,0,.3);
   font-size: 24px;
   line-height: 18px;
