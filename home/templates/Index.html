@@ -37,13 +37,13 @@
 
 			<!-- Intro -->
                 <div class="wrapper style2">
-                    <div class="title">Our Games</div>
+                    <div class="title">Focus</div>
                     <div class="flexslider">
                         <ul class="slides">
                             {% for p in introduceimages %}
                                 <li>
                                     <img src="{{ p.url|safe }}" />
-                                    <p class="flex-caption">Our Games</p>
+                                    <p class="flex-caption">{{ p.name }}</p>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -78,27 +78,27 @@
 							<div class="4u 12u(mobile)">
 								<section class="highlight">
 									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>
-									<h3><a href="/information/">Company Philosophy</a></h3>
+									<h3><a href="/information/">Philosophy</a></h3>
 									<ul class="actions">
-										<li><a href="#" class="button style4">More</a></li>
+										<li><a href="/information/" class="button style4">More</a></li>
 									</ul>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="highlight">
 									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtesu1hj30860603yq.jpg" alt="" /></a>
-									<h3><a href="/information/">Company Profile</a></h3>
+									<h3><a href="/information/">Profile</a></h3>
 									<ul class="actions">
-										<li><a href="#" class="button style4">More</a></li>
+										<li><a href="/information/" class="button style4">More</a></li>
 									</ul>
 								</section>
 							</div>
 							<div class="4u 12u(mobile)">
 								<section class="highlight">
 									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" alt="" /></a>
-									<h3><a href="/information/">Company Goal</a></h3>
+									<h3><a href="/information/">Goal</a></h3>
 									<ul class="actions">
-										<li><a href="#" class="button style4">More</a></li>
+										<li><a href="/information/" class="button style4">More</a></li>
 									</ul>
 								</section>
 							</div>
@@ -110,7 +110,7 @@
 
 			<!-- Main -->
                 <div id="intro-wrapper" class="wrapper style3">
-                    <div class="title">Our Teams</div>
+                    <div class="title">Members</div>
 					<div id="main" class="container">
 
                     <!-- Features -->
@@ -124,7 +124,7 @@
                                     {% for m in members_list %}
                                     <div class="6u 12u(mobile)">
                                         <section>
-                                            <img src="{{ m.img|safe }}">
+                                            <a href="{{ m.url|safe }}"><img src="{{ m.img|safe }}"></a>
                                             <div>
                                                 <h3>{{ m.name }}</h3>
                                                 <p>{{ m.signature }}</p>
@@ -142,9 +142,9 @@
                 </div>
 
 
-			<!-- Footer -->
+						<!-- Footer -->
 				<div id="footer-wrapper" class="wrapper">
-					<div class="title">Contact US</div>
+					<div class="title">Contact</div>
 					<div id="footer" class="container">
 						<div class="row 150%">
 							<div class="6u 12u(mobile)">
@@ -161,22 +161,22 @@
                             <!-- Contact -->
                                 <section class="feature-list small">
                                     <div class="row">
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-home">Mailing Address</h3>
-                                                <p>
-                                                    中国　四川　成都<br />
-                                                    1234 Somewhere Rd #987<br />
-                                                    Nashville, TN 00000-0000
-                                                </p>
-                                            </section>
-                                        </div>
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-home">Mailing Address</h3>#}
+{#                                                <p>#}
+{#                                                    中国　四川　成都<br />#}
+{#                                                    1234 Somewhere Rd #987<br />#}
+{#                                                    Nashville, TN 00000-0000#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
                                         <div class="6u 12u(mobile)">
                                             <section>
                                                 <h3 class="icon fa-comment">Social</h3>
                                                 <p>
-                                                    <a href="#">www.deskxd.com</a><br />
-                                                    <a href="#">deskxd/weibo.com</a>
+                                                    <a href="http://www.deskxd.com">www.deskxd.com</a><br />
+                                                    <a href="http://deskxd/weibo.com">sina-weibo</a>
                                                 </p>
                                             </section>
                                         </div>
@@ -186,18 +186,18 @@
                                             <section>
                                                 <h3 class="icon fa-envelope">Email</h3>
                                                 <p>
-                                                    <a href="#">info@untitled.tld</a>
+                                                    <a href="Contact@DeskXD.com">Contact@DeskXD.com</a>
                                                 </p>
                                             </section>
                                         </div>
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-phone">Phone</h3>
-                                                <p>
-                                                    (000) 555-0000
-                                                </p>
-                                            </section>
-                                        </div>
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-phone">Phone</h3>#}
+{#                                                <p>#}
+{#                                                    (000) 555-0000#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
                                     </div>
                                 </section>
 							</div>

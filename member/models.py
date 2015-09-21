@@ -1,7 +1,6 @@
 from django.db import models
 
 class Member(models.Model):
-    group = models.IntegerField(default=1,null=False)
     code = models.IntegerField(unique=True)
     name = models.CharField(max_length=100)
     job = models.CharField(max_length=100)
