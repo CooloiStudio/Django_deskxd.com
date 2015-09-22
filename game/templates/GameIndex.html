@@ -54,27 +54,15 @@
 						<!-- Features -->
 							<div id="highlights" class="container">
                                 <div class="row 150%">
+                                    {% for g in games %}
                                     <div class="4u 12u(mobile)">
                                         <section class="highlight">
-                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad3amppij30ci060gmb.jpg" alt="" /></a>
-                                            <h3><a href="#">图兰卡之门</a></h3>
-                                            <p style="text-align: justify;">《图兰卡之门》是贤卓成立首款主打手游，是一款策略型战棋游戏，采用Cocos-2D引擎，用唯美的画风、创意的诸多玩点，为玩家展示一个更广阔、内容更丰富的魔幻战棋新世界。</p>
+                                            <a href="{{ g.url|safe }}" class="image featured"><img src="{{ g.img|safe }}" alt="" /></a>
+                                            <h3><a href="{{ g.url|safe }}">{{ g.name }}</a></h3>
+                                            <p style="text-align: justify;">{{ g.introduce }}</p>
                                         </section>
                                     </div>
-                                    <div class="4u 12u(mobile)">
-                                        <section class="highlight">
-                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" alt="" /></a>
-                                            <h3><a href="#">Ohitx</a></h3>
-                                            <p style="text-align: justify;">《oHitx》这其实就是个OOXX的游戏，没啥好介绍的，攻城狮每天都要玩儿的摔手机！反正我觉得没啥好玩儿的，不信你下载下来试试！</p>
-                                        </section>
-                                    </div>
-                                    <div class="4u 12u(mobile)">
-                                        <section class="highlight">
-                                            <a href="#" class="image featured"><img src="http://ww1.sinaimg.cn/large/006bwLnEgw1evad39ps5nj30ci0603yf.jpg" alt="" /></a>
-                                            <h3><a href="#">Ohitx</a></h3>
-                                            <p style="text-align: justify;">《oHitx》这其实就是个OOXX的游戏，没啥好介绍的，攻城狮每天都要玩儿的摔手机！反正我觉得没啥好玩儿的，不信你下载下来试试！</p>
-                                        </section>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
 					</div>
