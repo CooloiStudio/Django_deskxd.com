@@ -2020,9 +2020,9 @@
 				padding: 12em 0;
 			}
 
-			.homepage #header {
-				padding: 16em 0;
-			}
+			/*.homepage #header {*/
+				/*padding: 16em 0;*/
+			/*}*/
 
 		/* Logo */
 
@@ -2036,9 +2036,9 @@
 				margin-top: -0.5em;
 			}
 
-			.homepage #logo {
-				margin-top: -1em;
-			}
+			/*.homepage #logo {*/
+				/*margin-top: -1em;*/
+			/*}*/
 
 			#logo h1 {
 				font-size: 2em;
