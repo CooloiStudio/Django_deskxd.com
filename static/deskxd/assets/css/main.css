@@ -1642,7 +1642,8 @@
 			}
 
 	#header-wrapper {
-		background: url("../../images/banner.jpg") center center;
+		/*background: url("../../images/banner.jpg") center center;*/
+		background: url("http://ww4.sinaimg.cn/large/006bwLnEgw1ewdetyklwrj31hc0fx0wm.jpg") center center;
 		background-size: cover;
 	}
 
