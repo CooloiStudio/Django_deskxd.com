@@ -2021,7 +2021,8 @@
 			}
 
 			/*.homepage #header {*/
-				/*padding: 16em 0;*/
+				/*/!*padding: 25% 0;*!/*/
+				/*/!*height: 800px;*!/*/
 			/*}*/
 
 		/* Logo */

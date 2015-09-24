@@ -28,8 +28,8 @@
 								<ul>
 									<li class="current"><a href="/">Home</a></li>
 									<li><a href="/information/">Infromation</a></li>
-									<li><a href="/game/">Game</a></li>
-									<li><a href="/member/">Member</a></li>
+									<li><a href="/game/">Games</a></li>
+									<li><a href="/member/">Members</a></li>
 								</ul>
 							</nav>
 
@@ -225,6 +225,31 @@
             <link rel="stylesheet" type="text/css" href="{% static 'deskxd_com/css/flexsider.css' %}"/>
             <script src="{% static 'deskxd_com/js/jquery.flexslider.js' %}"></script>
             <script>
+                var system = {
+                    win: false,
+                    mac: false,
+                    xll: false,
+                    ipad:false
+                };
+                //检测平台
+                var p = navigator.platform;
+                system.win = p.indexOf("Win") == 0;
+                system.mac = p.indexOf("Mac") == 0;
+                system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+                system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
+                //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+                if (system.win || system.mac || system.xll) {
+                    $(function () {
+                        var H = $(window).height();
+                        document.getElementById('header').style.height = H + 'px';
+                    });
+
+                    $(window).resize(function () {
+                        var H = $(window).height();
+                        document.getElementById('header').style.height = H + 'px';
+                    });
+                }
+
                 $(window).load(function() {
                     $('.flexslider').flexslider({
                         animation: "slide"
