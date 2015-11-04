@@ -38,14 +38,14 @@
 				</div>
 
 			<!-- Intro -->
-                <div class="wrapper style2">
+                <div class="wrapper style2" style="margin: 0; padding: 0;">
                     <div class="title">Focus</div>
                     <div class="flexslider" style="margin-bottom: -100px !important;">
                         <ul class="slides">
                             {% for p in introduceimages %}
                                 <li>
                                     <a href=""><img src="{{ p.url|safe }}" /></a>
-                                    <p class="flex-caption">{{ p.name }}</p>
+{#                                    <p class="flex-caption">{{ p.name }}</p>#}
                                 </li>
                             {% endfor %}
                         </ul>

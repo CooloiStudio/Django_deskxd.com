@@ -18,7 +18,7 @@
 .flexslider {
   margin: auto;
   padding: 0;
-  width: 90%;
+  width: 100%;
 }
 .flexslider .slides > li {
   display: none;
