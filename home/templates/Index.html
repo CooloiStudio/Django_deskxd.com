@@ -14,210 +14,216 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper" class="wrapper">
-					<div id="header">
+				<div id="header-wrapper" class="wrapper"  style="background-image: url({{ headimgs }});">
+					<div id="header" style="z-index: 1 !important;">
 
 						<!-- Logo -->
-							<div id="logo">
+							<div id="logo" class="logo-font">
 								<h1><a href="/">DeskXD Chengdu</a></h1>
-								<p>成都贤卓新信息技术有限公司</p>
+								<p style="color: #fff; font-size: 20px;">成都贤卓新信息技术有限公司</p>
 							</div>
 
 						<!-- Nav -->
 							<nav id="nav">
-								<ul>
+								<ul style="background: url({% static 'deskxd_com/images/hb.png' %});">
 									<li class="current"><a href="/">Home</a></li>
 									<li><a href="/information/">Infromation</a></li>
 									<li><a href="/game/">Games</a></li>
 									<li><a href="/member/">Members</a></li>
-                                    <li><a href="/thanks">Thanks</a></li>
 								</ul>
 							</nav>
 
 					</div>
-				</div>
 
-			<!-- Intro -->
-                <div class="wrapper style2" style="margin: 0; padding: 0;">
-                    <div class="title">Focus</div>
-                    <div class="flexslider" style="margin-bottom: -100px !important;">
-                        <ul class="slides">
-                            {% for p in introduceimages %}
-                                <li>
-                                    <a href=""><img src="{{ p.url|safe }}" /></a>
-{#                                    <p class="flex-caption">{{ p.name }}</p>#}
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="mobile-flexslider">
-                        <header class="style1">
-                            <h2>Our games</h2>
-                        </header>
-                        <div class="feature-list">
-                        {% for p in games %}
-                            <div class="row">
-                                <div class="6u 12u(mobile)">
-                                    <section>
-                                        <div class="games"><a href="#"><img src="{{ p.img }}" alt="" /></a></div>
-                                        <div class="games-name"><a href="{{ p.url|safe }}">{{ p.name }}</a></div>
-                                        <div class="games-introduce">{{ p.abstract }}</div>
-                                    </section>
-                                </div>
-                            </div>
-                        {% endfor %}
-                        </div>
-                    </div>
-				</div>
-
-
-
-        <!-- Highlights -->
-				<div class="wrapper style1" id="information" style="padding-top: 2em;">
-					<div class="title">INFORMATION</div>
-
-					<div id="highlights" class="container">
-                        <header class="style1">
-                            <h2>年轻，有为，活力，朝气</h2>
-                            <p>Youth，Promising，Vitality，Vigour</p>
-                        </header>
-						<div class="row 150%">
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>
-									<h3><a href="/information/">Philosophy</a></h3>
-									<ul class="actions">
-										<li><a href="/information/" class="button style4">More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtesu1hj30860603yq.jpg" alt="" /></a>
-									<h3><a href="/information/">Profile</a></h3>
-									<ul class="actions">
-										<li><a href="/information/" class="button style4">More</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" alt="" /></a>
-									<h3><a href="/information/">Goal</a></h3>
-									<ul class="actions">
-										<li><a href="/information/" class="button style4">More</a></li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-
-			<!-- Main -->
-                <div id="intro-wrapper" class="wrapper style3">
-                    <div class="title">Members</div>
-					<div id="main" class="container">
-
-                    <!-- Features -->
-                        <section id="features" style="margin-top: -50px;">
-                            <header class="style1">
-                                <h2>贤明的成员，卓越的团队</h2>
-                                <p>The sparrow may be small but it has all the vital organs</p>
-                            </header>
-                            <div class="feature-list">
-                                <div class="row">
-                                    {% for m in members_list %}
-                                    <div class="6u 12u(mobile)">
-                                        <section>
-                                            <a href="{{ m.url|safe }}"><img src="{{ m.img|safe }}"></a>
-                                            <div>
-                                                <h3>{{ m.name }}</h3>
-                                                <p>{{ m.signature }}</p>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <ul class="actions actions-centered">
-                                <li><a href="/member/" class="button style1 big">More Members</a></li>
-                            </ul>
-                        </section>
-					</div>
-                </div>
-
-
-            <!-- Footer -->
-				<div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">
-					<div class="title">Contact</div>
-					<div id="footer" class="container">
-						<div class="row 150%">
-							<div class="6u 12u(mobile)">
-
-                            <!-- Contact Form -->
-                                <section>
-                                    <div style="text-align: center; margin-top: 60px;">
-                                        <img src="{% static 'deskxd_com/images/erweima250x250.png' %}" />
-                                    </div>
-                                </section>
-
-							</div>
-							<div class="6u 12u(mobile)">
-                            <!-- Contact -->
-                                <section class="feature-list small" style="margin-top: 30px;">
-                                    <div class="row">
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-home">Mailing Address</h3>
-                                                <p>
-                                                    中国 四川省 成都市<br />
-                                                    锦江区 华兴正街39号<br />
-                                                    商业场新座1508室
-                                                </p>
-                                            </section>
-                                        </div>
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-comment">Social</h3>
-                                                <p>
-                                                    <a href="http://weibo.com/deskxd"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1exelmddopij300u00ujr5.jpg" style="width: 30px !important; margin-right: 5px !important;"/>@成都贤卓</a>
-                                                </p>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-envelope">Email</h3>
-                                                <p>
-                                                    <a href="http://Contact@DeskXD.com">Contact@DeskXD.com</a>
-                                                </p>
-                                            </section>
-                                        </div>
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-phone">Phone</h3>
-                                                <p>
-                                                    028-86671831
-                                                </p>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </section>
-							</div>
-						</div>
-						<hr />
-					</div>
-					<div id="copyright">
-						<ul>
+                    <div id="copyright" style=" z-index: 300 !important; position: relative;">
+						<ul style="background: url({% static 'deskxd_com/images/hb.png' %}); color: #fff; font-size: 14px;">
 							<li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a><li>
 						</ul>
 					</div>
+
 				</div>
 
-		</div>
+			<!-- Intro -->
+{#                <div class="wrapper style2" style="margin: 0; padding: 0;">#}
+{#                    <div class="title">Focus</div>#}
+{#                    <div class="flexslider">#}
+{#                        <ul class="slides">#}
+{#                            {% for p in introduceimages %}#}
+{#                                <li>#}
+{#                                    <a href=""><img src="{{ p.url|safe }}" /></a>#}
+{#                                    <p class="flex-caption">{{ p.name }}</p>#}
+{#                                </li>#}
+{#                            {% endfor %}#}
+{#                        </ul>#}
+{#                    </div>#}
+{#                    <div class="mobile-flexslider">#}
+{#                        <header class="style1">#}
+{#                            <h2>Our games</h2>#}
+{#                        </header>#}
+{#                        <div class="feature-list">#}
+{#                        {% for p in games %}#}
+{#                            <div class="row">#}
+{#                                <div class="6u 12u(mobile)">#}
+{#                                    <section>#}
+{#                                        <div class="games"><a href="#"><img src="{{ p.img }}" alt="" /></a></div>#}
+{#                                        <div class="games-name"><a href="{{ p.url|safe }}">{{ p.name }}</a></div>#}
+{#                                        <div class="games-introduce">{{ p.abstract }}</div>#}
+{#                                    </section>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                        </div>#}
+{#                    </div>#}
+{#				</div>#}
+
+
+
+{#        <!-- Highlights -->#}
+{#				<div class="wrapper style1" id="information" style="padding-top: 2em;">#}
+{#					<div class="title">INFORMATION</div>#}
+{##}
+{#					<div id="highlights" class="container">#}
+{#                        <header class="style1">#}
+{#                            <h2>年轻，有为，活力，朝气</h2>#}
+{#                            <p>Youth，Promising，Vitality，Vigour</p>#}
+{#                        </header>#}
+{#						<div class="row 150%">#}
+{#							<div class="4u 12u(mobile)">#}
+{#								<section class="highlight">#}
+{#									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>#}
+{#									<h3><a href="/information/">Philosophy</a></h3>#}
+{#									<ul class="actions">#}
+{#										<li><a href="/information/" class="button style4">More</a></li>#}
+{#									</ul>#}
+{#								</section>#}
+{#							</div>#}
+{#							<div class="4u 12u(mobile)">#}
+{#								<section class="highlight">#}
+{#									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtesu1hj30860603yq.jpg" alt="" /></a>#}
+{#									<h3><a href="/information/">Profile</a></h3>#}
+{#									<ul class="actions">#}
+{#										<li><a href="/information/" class="button style4">More</a></li>#}
+{#									</ul>#}
+{#								</section>#}
+{#							</div>#}
+{#							<div class="4u 12u(mobile)">#}
+{#								<section class="highlight">#}
+{#									<a href="/information/" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" alt="" /></a>#}
+{#									<h3><a href="/information/">Goal</a></h3>#}
+{#									<ul class="actions">#}
+{#										<li><a href="/information/" class="button style4">More</a></li>#}
+{#									</ul>#}
+{#								</section>#}
+{#							</div>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{##}
+{##}
+{##}
+{#			<!-- Main -->#}
+{#                <div id="intro-wrapper" class="wrapper style3">#}
+{#                    <div class="title">Members</div>#}
+{#					<div id="main" class="container">#}
+{##}
+{#                    <!-- Features -->#}
+{#                        <section id="features" style="margin-top: -50px;">#}
+{#                            <header class="style1">#}
+{#                                <h2>贤明的成员，卓越的团队</h2>#}
+{#                                <p>The sparrow may be small but it has all the vital organs</p>#}
+{#                            </header>#}
+{#                            <div class="feature-list">#}
+{#                                <div class="row">#}
+{#                                    {% for m in members_list %}#}
+{#                                    <div class="6u 12u(mobile)">#}
+{#                                        <section>#}
+{#                                            <a href="{{ m.url|safe }}"><img src="{{ m.img|safe }}"></a>#}
+{#                                            <div>#}
+{#                                                <h3>{{ m.name }}</h3>#}
+{#                                                <p>{{ m.signature }}</p>#}
+{#                                            </div>#}
+{#                                        </section>#}
+{#                                    </div>#}
+{#                                    {% endfor %}#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <ul class="actions actions-centered">#}
+{#                                <li><a href="/member/" class="button style1 big">More Members</a></li>#}
+{#                            </ul>#}
+{#                        </section>#}
+{#					</div>#}
+{#                </div>#}
+
+
+            <!-- Footer -->
+{#				<div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">#}
+{#					<div class="title">Contact</div>#}
+{#					<div id="footer" class="container">#}
+{#						<div class="row 150%">#}
+{#							<div class="6u 12u(mobile)">#}
+{##}
+{#                            <!-- Contact Form -->#}
+{#                                <section>#}
+{#                                    <div style="text-align: center; margin-top: 60px;">#}
+{#                                        <img src="{% static 'deskxd_com/images/erweima250x250.png' %}" />#}
+{#                                    </div>#}
+{#                                </section>#}
+{##}
+{#							</div>#}
+{#							<div class="6u 12u(mobile)">#}
+{#                            <!-- Contact -->#}
+{#                                <section class="feature-list small" style="margin-top: 30px;">#}
+{#                                    <div class="row">#}
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-home">Mailing Address</h3>#}
+{#                                                <p>#}
+{#                                                    中国 四川省 成都市<br />#}
+{#                                                    锦江区 华兴正街39号<br />#}
+{#                                                    商业场新座1508室#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-comment">Social</h3>#}
+{#                                                <p>#}
+{#                                                    <a href="http://weibo.com/deskxd"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1exelmddopij300u00ujr5.jpg" style="width: 30px !important; margin-right: 5px !important;"/>@成都贤卓</a>#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="row">#}
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-envelope">Email</h3>#}
+{#                                                <p>#}
+{#                                                    <a href="http://Contact@DeskXD.com">Contact@DeskXD.com</a>#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
+{#                                        <div class="6u 12u(mobile)">#}
+{#                                            <section>#}
+{#                                                <h3 class="icon fa-phone">Phone</h3>#}
+{#                                                <p>#}
+{#                                                    028-86671831#}
+{#                                                </p>#}
+{#                                            </section>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </section>#}
+{#							</div>#}
+{#						</div>#}
+{#						<hr />#}
+{#					</div>#}
+{#					<div id="copyright">#}
+{#						<ul>#}
+{#							<li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a><li>#}
+{#						</ul>#}
+{#					</div>#}
+{#				</div>#}
+{##}
+{#		</div>#}
 
 		<!-- Scripts -->
 
@@ -244,7 +250,7 @@
                 system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
                 system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
                 //跳转语句
-                if (system.win || system.mac || system.xll) {
+                if (system.win || system.mac || system.xll || system.ipad) {
                     $(function () {
                         var H = $(window).height();
                         document.getElementById('header').style.height = H + 'px';
