@@ -55,11 +55,10 @@
 	.sina img{
 		width: 300px;
 	}
-	.logo-font{
-		text-shadow:0 1px #000,
-                	1px 0 #000,
-                	2px 1px #000,
-                	1px 2px #000;
+
+	.idi{
+		width: 100%;
+		height: 800px;
 	}
 
 
@@ -2777,3 +2776,11 @@
 						}
 
 	}
+
+
+@media screen and (max-width: 1600px) {
+	.idi{
+		width: 100%;
+		height: 600px;
+	}
+}
