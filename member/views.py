@@ -3,7 +3,7 @@ from django.views import generic
 from django.http import HttpResponse, HttpResponseRedirect
 from member.models import *
 
-class IndexView(generic.View):
+class IndexViews(generic.View):
     templates_file = 'MemberIndex.html'
 
     def get(self, request):

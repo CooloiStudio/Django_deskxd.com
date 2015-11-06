@@ -4,7 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from thanks.models import *
 import random
 
-class IndexView(generic.View):
+class IndexViews(generic.View):
     templates_file = 'thanksIndex.html'
 
     def get(self, request):

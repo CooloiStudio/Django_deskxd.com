@@ -8,7 +8,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 import random
 
 
-class IndexView(generic.View):
+class IndexViews(generic.View):
     templates_file = 'Index.html'
 
     def get(self, request):
