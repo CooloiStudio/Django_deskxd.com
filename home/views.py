@@ -36,18 +36,11 @@ class IndexViews(generic.View):
             members_list.append(a)
             i = i - 1
 
-        # HEADIMG
-        headimgs = list(HeadImg.objects.all())
-        headimg_list = []
-        for h in headimgs:
-            headimg_list.append(h.url)
-
 
         context = {
             'games': games,
             'members_list': members_list,
             'introduceimages': introduceimages,
-            'headimgs': random.choice(headimg_list),
         }
         return render(request,
                       self.templates_file,
