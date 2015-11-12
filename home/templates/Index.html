@@ -20,7 +20,7 @@
 						<!-- Logo -->
 							<div id="logo" class="logo-font">
 								<h1><a href="/">DeskXD Chengdu</a></h1>
-								<p style="color: #fff; font-size: 20px;">成都贤卓新信息技术有限公司</p>
+								<p>成都贤卓新信息技术有限公司</p>
 							</div>
 
 						<!-- Nav -->
@@ -61,7 +61,7 @@
                             <div class="row">
                                 <div class="6u 12u(mobile)">
                                     <section>
-                                        <div class="games"><a href="#"><img src="{{ p.img }}" alt="" /></a></div>
+                                        <div class="games"><a href="{{ p.url|safe }}"><img src="{{ p.img }}" alt="" /></a></div>
                                         <div class="games-name"><a href="{{ p.url|safe }}">{{ p.name }}</a></div>
                                         <div class="games-introduce">{{ p.abstract }}</div>
                                     </section>
