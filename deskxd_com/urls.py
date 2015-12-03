@@ -8,4 +8,6 @@ urlpatterns = patterns('',
     url(r'^information/', include('information.urls', namespace="information")),
     url(r'^member/', include('member.urls', namespace="member")),
     url(r'^thanks/', include('thanks.urls', namespace="thanks")),
+    url(r'^agreement/', include('agreement.urls', namespace="agreement")),
+    url(r'^ueditor/',include('DjangoUeditor.urls')),
 )

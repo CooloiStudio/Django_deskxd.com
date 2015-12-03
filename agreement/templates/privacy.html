@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+    {% load static from staticfiles %}
+	<head>
+		<title>成都贤卓新信息技术有限公司</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->
+		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper" class="wrapper">
+					<div id="header">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="/">DeskXD Chengdu</a></h1>
+								<p>成都贤卓新信息技术有限公司</p>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li class="current"><a href="/">Home</a></li>
+									<li><a href="/information/">Infromation</a></li>
+									<li><a href="/game/">Games</a></li>
+									<li><a href="/member/">Members</a></li>
+                                    <li><a href="/thanks">Thanks</a></li>
+								</ul>
+							</nav>
+
+					</div>
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style2">
+					<div class="title">Privacy</div>
+					<div id="main" class="container">
+
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<header style="height: 50px;" class="style1">
+										<h2 style="margin-bottom: 0px;">贤卓游戏隐私政策</h2>
+									</header>
+								</article>
+                                <div id="highlights" class="container">
+                                    <div style="width: 80%; margin: 0 auto;">
+                                        {% if privacy != "" %}
+                                            {{ privacy|safe }}
+                                        {% endif %}
+                                    </div>
+                                </div>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">
+					<div class="title">Contact</div>
+					<div id="footer" class="container">
+						<div class="row 150%">
+							<div class="6u 12u(mobile)">
+
+                            <!-- Contact Form -->
+                                <section>
+                                    <div style="text-align: center; margin-top: 60px;">
+                                        <img src="{% static 'deskxd_com/images/erweima250x250.png' %}" />
+                                    </div>
+                                </section>
+
+							</div>
+							<div class="6u 12u(mobile)">
+                            <!-- Contact -->
+                                <section class="feature-list small" style="margin-top: 30px;">
+                                    <div class="row">
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-home">Mailing Address</h3>
+                                                <p>
+                                                    中国 四川省 成都市<br />
+                                                    锦江区 华兴正街39号<br />
+                                                    商业场新座1508室
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-comment">Social</h3>
+                                                <p>
+                                                    <a href="http://weibo.com/deskxd"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1exelmddopij300u00ujr5.jpg" style="width: 30px !important; margin-right: 5px !important;"/>@成都贤卓</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-envelope">Email</h3>
+                                                <p>
+                                                    <a href="http://Contact@DeskXD.com">Contact@DeskXD.com</a>
+                                                </p>
+                                            </section>
+                                        </div>
+                                        <div class="6u 12u(mobile)">
+                                            <section>
+                                                <h3 class="icon fa-phone">Phone</h3>
+                                                <p>
+                                                    028-86671831
+                                                </p>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </section>
+							</div>
+						</div>
+						<hr />
+					</div>
+					<div id="copyright">
+						<ul>
+							<li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a></li>
+						</ul>
+					</div>
+				</div>
+
+
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'deskxd/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel-viewport.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'deskxd/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
