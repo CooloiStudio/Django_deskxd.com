@@ -11,5 +11,4 @@ urlpatterns = patterns('',
     url(r'^thanks/', include('thanks.urls', namespace="thanks")),
     url(r'^agreement/', include('agreement.urls', namespace="agreement")),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
