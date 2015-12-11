@@ -1,8 +1,8 @@
 from django.contrib import admin
-from django.conf.urls import patterns, include, url
+from django.conf.urls import include, url
 from django.contrib.auth import settings
 
-urlpatterns = patterns('',
+urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', include('home.urls', namespace="home")),
     url(r'^game/', include('game.urls', namespace="game")),
@@ -11,4 +11,4 @@ urlpatterns = patterns('',
     url(r'^thanks/', include('thanks.urls', namespace="thanks")),
     url(r'^agreement/', include('agreement.urls', namespace="agreement")),
     url(r'^ueditor/',include('DjangoUeditor.urls')),
-)
+]
