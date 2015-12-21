@@ -1,0 +1,24 @@
+ <!-- Highlights -->
+<div class="wrapper style1" id="information" style="padding-top: 2em;">
+    <div class="title">{{ p.name }}</div>
+
+    <div id="highlights" class="container">
+        <header class="style1">
+            <h2>{{ p.title }}</h2>
+            <p>{{ p.subtitle }}</p>
+        </header>
+        <div class="row 150%">
+            {% for p in info_list %}
+                <div class="4u 12u(mobile)">
+                    <section class="highlight">
+                        <a href="/information/" class="image featured"><img src="{{ p.img }}" alt="" /></a>
+                        <h3><a href="/information/">{{ p.name }}</a></h3>
+                        <ul class="actions">
+                            <li><a href="/information/" class="button style4">More</a></li>
+                        </ul>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

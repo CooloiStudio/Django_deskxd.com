@@ -1,0 +1,79 @@
+<!-- Footer -->
+<div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">
+    <div class="title">{{ p.name }}</div>
+    <div id="footer" class="container">
+        <div class="row 150%">
+            <div class="6u 12u(mobile)">
+
+            <!-- Contact Form -->
+                <section>
+                    <div style="text-align: center; margin-top: 60px;">
+                        <img src="http://ww1.sinaimg.cn/large/006bwLnEgw1ez7cboh2wkj306y06ydgw.jpg" />
+                    </div>
+                </section>
+
+            </div>
+            <div class="6u 12u(mobile)">
+            <!-- Contact -->
+                <section class="feature-list small" style="margin-top: 30px;">
+                    {% for p in contact_list %}
+                        <div class="row">
+                            {% for q in p %}
+                                <div class="6u 12u(mobile)">
+                                    <section>
+                                        <h3 class="icon fa-{{ q.remark }}">{{ q.name }}</h3>
+                                        <p>{{ q.text|safe }}</p>
+                                    </section>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+{#                    <div class="row">#}
+{#                        <div class="6u 12u(mobile)">#}
+{#                            <section>#}
+{#                                <h3 class="icon fa-home">Mailing Address</h3>#}
+{#                                <p>#}
+{#                                    中国 四川省 成都市<br/>#}
+{#                                    锦江区 华兴正街39号<br/>#}
+{#                                    商业场新座1508室#}
+{#                                </p>#}
+{#                            </section>#}
+{#                        </div>#}
+{#                        <div class="6u 12u(mobile)">#}
+{#                            <section>#}
+{#                                <h3 class="icon fa-comment">Social</h3>#}
+{#                                <p>#}
+{#                                    <a href="http://weibo.com/deskxd"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1exelmddopij300u00ujr5.jpg" style="width: 30px !important; margin-right: 5px !important;"/>@成都贤卓</a>#}
+{#                                </p>#}
+{#                            </section>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="row">#}
+{#                        <div class="6u 12u(mobile)">#}
+{#                            <section>#}
+{#                                <h3 class="icon fa-envelope">Email</h3>#}
+{#                                <p>#}
+{#                                    <a href="http://Contact@DeskXD.com">Contact@DeskXD.com</a>#}
+{#                                </p>#}
+{#                            </section>#}
+{#                        </div>#}
+{#                        <div class="6u 12u(mobile)">#}
+{#                            <section>#}
+{#                                <h3 class="icon fa-phone">Phone</h3>#}
+{#                                <p>#}
+{#                                    028-86671831#}
+{#                                </p>#}
+{#                            </section>#}
+{#                        </div>#}
+{#                    </div>#}
+                </section>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div id="copyright">
+        <ul>
+            <li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a><li>
+        </ul>
+    </div>
+</div>

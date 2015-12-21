@@ -1,0 +1,32 @@
+<!-- Main -->
+<div id="intro-wrapper" class="wrapper style3">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+
+    <!-- Features -->
+        <section id="features" style="margin-top: -50px;">
+            <header class="style1">
+                <h2>{{ p.title }}</h2>
+                <p>{{ p.subtitle }}</p>
+            </header>
+            <div class="feature-list">
+                <div class="row">
+                    {% for m in members_list %}
+                        <div class="6u 12u(mobile)">
+                            <section>
+                                <a href="{{ m.url|safe }}"><img src="{{ m.img|safe }}"></a>
+                                <div>
+                                    <h3>{{ m.name }}</h3>
+                                    <p>{{ m.signature }}</p>
+                                </div>
+                            </section>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <ul class="actions actions-centered">
+                <li><a href="/member/" class="button style1 big">More</a></li>
+            </ul>
+        </section>
+    </div>
+</div>

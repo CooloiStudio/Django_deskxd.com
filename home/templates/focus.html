@@ -1,0 +1,35 @@
+<!-- Intro -->
+<div class="wrapper style2" style="padding-bottom: 50px;">
+    <div class="title">{{ p.name }}</div>
+    <div class="flexslider">
+        <ul class="slides">
+            {% for p in introduce_list %}
+                <li>
+                    <a href="{{ p.url }}">
+{#                                        <img src="{{ p.url|safe }}" />#}
+                        <div class="idi" style="background: url({{ p.img|safe }}) center center; background-size: cover;"></div>
+                    </a>
+                    <p class="flex-caption">{{ p.name }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mobile-flexslider">
+        <header class="style1">
+            <h2>OUR GAMES</h2>
+        </header>
+        <div class="feature-list">
+        {% for p in game_list %}
+            <div class="row">
+                <div class="6u 12u(mobile)">
+                    <section>
+                        <div class="games"><a href="{{ p.url|safe }}"><img src="{{ p.img }}" alt="" /></a></div>
+                        <div class="games-name"><a href="{{ p.url|safe }}">{{ p.name }}</a></div>
+                        <div class="games-introduce">{{ p.abstract }}</div>
+                    </section>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
