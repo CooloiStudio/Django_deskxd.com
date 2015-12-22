@@ -1,0 +1,32 @@
+<!-- Main -->
+<div class="wrapper style2">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+
+        <!-- Content -->
+            <div id="content">
+                <article class="box post">
+                    <header class="style1">
+                        <h2>{{ p.title }}</h2>
+                        <p>{{ p.subtitle }}</p>
+                    </header>
+                    {% for p in info_list %}
+                        {% if p.code == 1 %}
+                            <a href="#" class="image featured">
+                                <img src="http://ww3.sinaimg.cn/large/006bwLnEgw1evad63fedyj30zk0dwgn5.jpg" alt="" />
+                            </a>
+                            {{ p.introduce|safe }}
+                        {% endif %}
+                    {% endfor %}
+{#                    <a href="#" class="image featured">#}
+{#                        <img src="http://ww3.sinaimg.cn/large/006bwLnEgw1evad63fedyj30zk0dwgn5.jpg" alt="" />#}
+{#                    </a>#}
+{#                    <p style="text-align: justify;">　　贤卓新信息技术有限公司成立于2015年2月，是一家以手机游戏为发展起点，集研发、运营、销售为一体的自主创业公司。</p>#}
+{#                    <p style="text-align: justify;">　　作为一家新兴IT公司，贤卓始终保持着创业激情，我们的成员均为90后，朝气蓬勃。贤卓有着创新的精神，但脚踏实地，#}
+{#                        绝不好高骛远。我们有着开放的创业环境，鼓励所有成员表达自己的想法、支持每一名成员参与项目的改进，贤卓将不断成长，并与公司全体#}
+{#                        同仁共同进步。</p>#}
+                </article>
+            </div>
+
+    </div>
+</div>

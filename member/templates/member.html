@@ -1,0 +1,30 @@
+<!-- Main -->
+<div class="wrapper style2">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+
+        <!-- Content -->
+            <div id="content">
+                <article class="box post">
+                    <header class="style1">
+                        <h2>{{ p.title }}</h2>
+                        <p>{{ p.subtitle }}</p>
+                    </header>
+                </article>
+                <div id="highlights" class="container">
+                    <div class="row 150%">
+                        {% for m in members_list %}
+                        <div class="4u 12u(mobile)">
+                            <section class="highlight">
+                                <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
+                                <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
+                                <p style="text-align: justify;">{{ m.signature|safe }}</p>
+                            </section>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<!-- Highlights -->
+<div class="wrapper style3">
+    <div class="title">{{ p.name }}</div>
+    <div id="highlights" class="container">
+        <div class="row 150%">
+            {% for p in info_list %}
+                {% if p.code != 1 %}
+                    <div class="4u 12u(mobile)">
+                        <section class="highlight">
+                            <a href="#" class="image featured"><img src="{{ p.img }}" alt="" /></a>
+                            <h3><a href="#">{{ p.name }}</a></h3>
+                            <p style="text-align: justify;">{{ p.introduce }}</p>
+                        </section>
+                    </div>
+                {% endif %}
+            {% endfor %}
+{#            <div class="4u 12u(mobile)">#}
+{#                <section class="highlight">#}
+{#                    <a href="#" class="image featured"><img src="{% static 'deskxd_com/images/big-logo.png' %}" alt="" /></a>#}
+{#                    <h3><a href="#">Logo</a></h3>#}
+{#                    <p style="text-align: justify;">掀桌子，掀桌子，（╯‵□′）╯︵┻━┻<br/>掀桌子，掀桌子，（╯‵□′）╯︵┻━┻<br/>掀桌子，掀桌子，（╯‵□′）╯︵┻━┻</p>#}
+{#                </section>#}
+{#            </div>#}
+{#            <div class="4u 12u(mobile)">#}
+{#                <section class="highlight">#}
+{#                    <a href="#" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>#}
+{#                    <h3><a href="#">Philosophy</a></h3>#}
+{#                    <p style="text-align: justify;">做自己会玩的游戏！</p>#}
+{#                </section>#}
+{#            </div>#}
+{#            <div class="4u 12u(mobile)">#}
+{#                <section class="highlight">#}
+{#                    <a href="#" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" alt="" /></a>#}
+{#                    <h3><a href="#">Goal</a></h3>#}
+{#                    <p style="text-align: justify;">贤卓，取贤明、卓越的首字作为公司名，表达了贤卓人对自己的期望，也表现了我们的决心，做到有智慧、有能力、卓尔不凡、超越自我。我们坚信，#}
+{#                        未来的贤卓，定能在游戏行业中一枝独秀！</p>#}
+{#                </section>#}
+{#            </div>#}
+        </div>
+    </div>
+</div>

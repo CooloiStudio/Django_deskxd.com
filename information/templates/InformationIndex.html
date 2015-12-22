@@ -2,7 +2,7 @@
 <html>
     {% load static from staticfiles %}
 	<head>
-		<title>成都贤卓新信息技术有限公司</title>
+		<title>DeskXD 贤卓</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
@@ -19,171 +19,39 @@
 
 						<!-- Logo -->
 							<div id="logo">
-								<h1><a href="/">DeskXD Chengdu</a></h1>
+								<h1><a href="/{% if lang != "zh-cn" %}?lang={{ lang }}{% endif %}">DeskXD Chengdu</a></h1>
 								<p>成都贤卓新信息技术有限公司</p>
 							</div>
 
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li class="current"><a href="/">Home</a></li>
-									<li><a href="/information/">Infromation</a></li>
-									<li><a href="/game/">Games</a></li>
-									<li><a href="/member/">Members</a></li>
-                                    <li><a href="/thanks">Thanks</a></li>
+                                    {% for m in menu_list %}
+                                        <li>
+                                            {% if m.id == 5 %}
+                                                <a href="{{ m.url }}">{{ m.name }}</a>
+                                                <ul>
+                                                    {% for p in languages %}
+                                                        <li>
+                                                            <a href="/information/{% if p.text != "zh-cn" %}?lang={{ p.text }}{% endif %}" {% if p.text == lang %}style="color: #f98780; text-align: center;"{% else %}style="text-align: center;"{% endif %}>{{ p.name }}</a>
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            {% else %}
+                                                <a href="{{ m.url }}{% if lang != "zh-cn" %}?lang={{ lang }}{% endif %}">{{ m.name }}</a>
+                                            {% endif %}
+                                        </li>
+                                    {% endfor %}
 								</ul>
 							</nav>
 
 					</div>
 				</div>
 
-			<!-- Main -->
-				<div class="wrapper style2">
-					<div class="title">Information</div>
-					<div id="main" class="container">
 
-						<!-- Content -->
-							<div id="content">
-								<article class="box post">
-									<header class="style1">
-										<h2>贤卓新信息技术有限公司</h2>
-										<p>年轻，有为，活力，朝气</p>
-									</header>
-									<a href="#" class="image featured">
-                                        <img src="http://ww3.sinaimg.cn/large/006bwLnEgw1evad63fedyj30zk0dwgn5.jpg" alt="" />
-									</a>
-									<p style="text-align: justify;">　　贤卓新信息技术有限公司成立于2015年2月，是一家以手机游戏为发展起点，集研发、运营、销售为一体的自主创业公司。</p>
-									<p style="text-align: justify;">　　作为一家新兴IT公司，贤卓始终保持着创业激情，我们的成员均为90后，朝气蓬勃。贤卓有着创新的精神，但脚踏实地，
-                                        绝不好高骛远。我们有着开放的创业环境，鼓励所有成员表达自己的想法、支持每一名成员参与项目的改进，贤卓将不断成长，并与公司全体
-                                        同仁共同进步。</p>
-								</article>
-							</div>
-
-					</div>
-				</div>
-
-			<!-- Highlights -->
-				<div class="wrapper style3">
-					<div class="title">Our Company</div>
-					<div id="highlights" class="container">
-						<div class="row 150%">
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="{% static 'deskxd_com/images/big-logo.png' %}" alt="" /></a>
-									<h3><a href="#">Logo</a></h3>
-									<p style="text-align: justify;">掀桌子，掀桌子，（╯‵□′）╯︵┻━┻<br/>掀桌子，掀桌子，（╯‵□′）╯︵┻━┻<br/>掀桌子，掀桌子，（╯‵□′）╯︵┻━┻</p>
-								</section>
-							</div>
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>
-									<h3><a href="#">Philosophy</a></h3>
-									<p style="text-align: justify;">做自己会玩的游戏！</p>
-								</section>
-							</div>
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-									<a href="#" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtf9imnj308606074k.jpg" alt="" /></a>
-									<h3><a href="#">Goal</a></h3>
-									<p style="text-align: justify;">贤卓，取贤明、卓越的首字作为公司名，表达了贤卓人对自己的期望，也表现了我们的决心，做到有智慧、有能力、卓尔不凡、超越自我。我们坚信，
-                                        未来的贤卓，定能在游戏行业中一枝独秀！</p>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-                <div class="wrapper style2">
-					<div class="title">Agreement & Privacy</div>
-					<div id="main" class="container">
-                        <div class="row 150%">
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-{#									<a href="#" class="image featured"><img src="{% static 'deskxd_com/images/big-logo.png' %}" alt="" /></a>#}
-									<h3 style="text-align: center;"><a href="/agreement">贤卓游戏许可及服务协议</a></h3>
-								</section>
-							</div>
-							<div class="4u 12u(mobile)">
-								<section class="highlight">
-{#									<a href="#" class="image featured"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1evadtege3yj3086060dg2.jpg" alt="" /></a>#}
-									<h3 style="text-align: center;"><a href="/agreement/privacy">贤卓游戏隐私政策</a></h3>
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-
-
-
-            <!-- Footer -->
-				<div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">
-					<div class="title">Contact</div>
-					<div id="footer" class="container">
-						<div class="row 150%">
-							<div class="6u 12u(mobile)">
-
-                            <!-- Contact Form -->
-                                <section>
-                                    <div style="text-align: center; margin-top: 60px;">
-                                        <img src="{% static 'deskxd_com/images/erweima250x250.png' %}" />
-                                    </div>
-                                </section>
-
-							</div>
-							<div class="6u 12u(mobile)">
-                            <!-- Contact -->
-                                <section class="feature-list small" style="margin-top: 30px;">
-                                    <div class="row">
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-home">Mailing Address</h3>
-                                                <p>
-                                                    中国 四川省 成都市<br />
-                                                    锦江区 华兴正街39号<br />
-                                                    商业场新座1508室
-                                                </p>
-                                            </section>
-                                        </div>
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-comment">Social</h3>
-                                                <p>
-                                                    <a href="http://weibo.com/deskxd"><img src="http://ww4.sinaimg.cn/large/006bwLnEgw1exelmddopij300u00ujr5.jpg" style="width: 30px !important; margin-right: 5px !important;"/>@成都贤卓</a>
-                                                </p>
-                                            </section>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-envelope">Email</h3>
-                                                <p>
-                                                    <a href="http://Contact@DeskXD.com">Contact@DeskXD.com</a>
-                                                </p>
-                                            </section>
-                                        </div>
-                                        <div class="6u 12u(mobile)">
-                                            <section>
-                                                <h3 class="icon fa-phone">Phone</h3>
-                                                <p>
-                                                    028-86671831
-                                                </p>
-                                            </section>
-                                        </div>
-                                    </div>
-                                </section>
-							</div>
-						</div>
-						<hr />
-					</div>
-					<div id="copyright">
-						<ul>
-							<li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a></li>
-						</ul>
-					</div>
-				</div>
-
+                {% for p in section_list %}
+                    {% include p.basepage %}
+                {% endfor %}
 
 
 		</div>

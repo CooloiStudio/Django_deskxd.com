@@ -1,0 +1,32 @@
+<!-- Highlights -->
+<div class="wrapper style3">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+
+        <!-- Image -->
+            <div class="image featured" style="margin-bottom: 100px !important;">
+                <div class="flexslider" style="width: 100%; display: block !important;">
+                    <ul class="slides">
+                        {% for p in gameimgs %}
+                        <li><img src="{{ p.img|safe }}" alt="" /></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        <!-- Features -->
+            <div id="highlights" class="container">
+                <div class="row 150%">
+                    {% for g in game_list %}
+                    <div class="4u 12u(mobile)">
+                        <section class="highlight">
+                            <a href="{{ g.url|safe }}" class="image featured"><img src="{{ g.img|safe }}" alt="" /></a>
+                            <h3><a href="{{ g.url|safe }}">{{ g.name }}</a></h3>
+                            <p style="text-align: justify;">{{ g.introduce }}</p>
+                        </section>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    </div>
+</div>

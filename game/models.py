@@ -19,3 +19,16 @@ class GameImages(models.Model):
     code = models.IntegerField(unique=True, default=0)
     img = models.CharField(max_length=300)
     url = models.CharField(max_length=300)
+
+
+class GSection(models.Model):
+    code = models.IntegerField(unique=True)
+    basepage = models.CharField(max_length=200)
+
+
+class GSectionInfo(models.Model):
+    language = models.ForeignKey(Languages)
+    section = models.ForeignKey(GSection)
+    name = models.CharField(max_length=200)
+    title = models.CharField(max_length=200, null=True)
+    subtitle = models.CharField(max_length=200, null=True)

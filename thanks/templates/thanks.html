@@ -1,0 +1,16 @@
+<!-- Main -->
+<div class="wrapper style2">
+    <div class="title">{{ p.name }}</div>
+    <div id="highlights" class="container">
+        <div class="row 150%">
+            {% for t in thankss %}
+                <div class="4u 12u(mobile)">
+                    <section class="highlight">
+                        <a href="{{ t.url|safe }}" class="image featured"><img src="{{ t.logo|safe }}" alt="" /></a>
+                        <h3><a href="{{ t.url|safe }}">{{ t.name }}</a></h3>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

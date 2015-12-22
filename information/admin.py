@@ -12,4 +12,26 @@ class InformationAdmin(admin.ModelAdmin):
     inlines = [InfoInline]
 
 
+class ProtocolInline(admin.StackedInline):
+    model = ProtocolInfo
+    extra = 3
+
+
+class ProtocolAdmin(admin.ModelAdmin):
+    list_display = ('code', 'url', )
+    inlines = [ProtocolInline]
+
+
+class InfoSectionInline(admin.StackedInline):
+    model = InfoSectionInfo
+    extra = 3
+
+
+class InfoSectionAdmin(admin.ModelAdmin):
+    list_display = ('code', 'basepage', )
+    inlines = [InfoSectionInline]
+
+
 admin.site.register(Information, InformationAdmin)
+admin.site.register(Protocol, ProtocolAdmin)
+admin.site.register(InfoSection, InfoSectionAdmin)

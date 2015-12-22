@@ -19,7 +19,7 @@
 
 						<!-- Logo -->
 							<div id="logo" class="logo-font">
-								<h1><a href="/">DeskXD Chengdu</a></h1>
+								<h1><a href="/{% if lang != "zh-cn" %}?lang={{ lang }}{% endif %}">DeskXD Chengdu</a></h1>
 								<p>成都贤卓新信息技术有限公司</p>
 							</div>
 
@@ -51,10 +51,6 @@
         {% for p in section_list %}
             {% include p.basepage %}
         {% endfor %}
-{#        {% include 'focus.html' %}#}
-{#        {% include 'information.html' %}#}
-{#        {% include 'members.html' %}#}
-{#        {% include 'contact.html' %}#}
 
 		</div>
 

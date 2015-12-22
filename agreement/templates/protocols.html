@@ -1,0 +1,23 @@
+<!-- Main -->
+<div class="wrapper style2">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+
+        <!-- Content -->
+            <div id="content">
+                <article class="box post">
+                    <header style="height: 50px;" class="style1">
+                        <h2 style="margin-bottom: 0px;">{{ p.title }}</h2>
+                    </header>
+                </article>
+                <div id="highlights" class="container">
+                    <div style="width: 80%; margin: 0 auto; text-align: justify;">
+                        {% if protocols != "" %}
+                            {{ protocols|safe }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</div>

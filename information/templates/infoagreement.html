@@ -1,0 +1,14 @@
+<div class="wrapper style2">
+    <div class="title">{{ p.name }}</div>
+    <div id="main" class="container">
+        <div class="row 150%">
+            {% for p in protocol_list %}
+                <div class="4u 12u(mobile)">
+                    <section class="highlight">
+                        <h3 style="text-align: center;"><a href="{{ p.url }}{% if lang != "zh-cn" %}/?lang={{ lang }}{% endif %}">{{ p.name }}</a></h3>
+                    </section>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
