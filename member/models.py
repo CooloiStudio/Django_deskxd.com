@@ -7,6 +7,7 @@ class Member(models.Model):
     sort = models.IntegerField(unique=True)
     url = models.CharField(max_length=200)
     img = models.CharField(max_length=200)
+    group = models.CharField(max_length=50, null=True)
 
 
 class MemberInfo(models.Model):
