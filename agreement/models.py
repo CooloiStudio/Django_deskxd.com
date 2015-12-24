@@ -14,7 +14,8 @@ class Privacy(models.Model):
 
 
 class ASection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 
@@ -27,7 +28,8 @@ class ASectionInfo(models.Model):
 
 
 class PSection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

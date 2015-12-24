@@ -6,11 +6,11 @@ class GameInfoInline(admin.StackedInline):
     extra = 3
 
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('code', 'url', )
+    list_display = ('code', 'sort', 'url', )
     inlines = [GameInfoInline]
 
 class GameImagesAdmin(admin.ModelAdmin):
-    list_display = ('code', 'img', )
+    list_display = ('code', 'sort', 'img', )
 
 
 class GSectionInline(admin.StackedInline):
@@ -19,7 +19,7 @@ class GSectionInline(admin.StackedInline):
 
 
 class GSectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [GSectionInline]
 
 

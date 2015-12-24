@@ -2,7 +2,8 @@ from django.db import models
 from home.models import Languages
 
 class Information(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     img = models.CharField(max_length=300)
 
 
@@ -14,7 +15,8 @@ class InformationInfo(models.Model):
 
 
 class Protocol(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     url = models.CharField(max_length=500)
 
 
@@ -25,7 +27,8 @@ class ProtocolInfo(models.Model):
 
 
 class InfoSection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

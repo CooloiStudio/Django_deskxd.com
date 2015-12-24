@@ -11,7 +11,7 @@ class TSectionInline(admin.StackedInline):
 
 
 class TSectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [TSectionInline]
 
 

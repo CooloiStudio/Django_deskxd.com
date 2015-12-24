@@ -3,7 +3,8 @@ from home.models import Languages
 
 
 class Member(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     url = models.CharField(max_length=200)
     img = models.CharField(max_length=200)
 
@@ -17,7 +18,8 @@ class MemberInfo(models.Model):
 
 
 class MSection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

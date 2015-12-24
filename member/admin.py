@@ -8,7 +8,7 @@ class MemberInline(admin.StackedInline):
 
 
 class MemberAdmin(admin.ModelAdmin):
-    list_display = ('code', 'url', )
+    list_display = ('code', 'sort', 'url', )
     inlines = [MemberInline]
 
 
@@ -18,7 +18,7 @@ class MSectionInline(admin.StackedInline):
 
 
 class MSectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [MSectionInline]
 
 

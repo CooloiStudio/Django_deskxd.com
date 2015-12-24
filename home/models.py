@@ -11,7 +11,8 @@ class Languages(models.Model):
 
 
 class IntroduceImage(models.Model):
-    code = models.IntegerField(null=False, unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     url = models.CharField(max_length=100)
     img = models.CharField(max_length=500, default=0)
 
@@ -23,7 +24,8 @@ class IntroduceInfo(models.Model):
 
 
 class Menu(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     url = models.CharField(max_length=200)
 
 
@@ -34,7 +36,8 @@ class MenuInfo(models.Model):
 
 
 class Contact(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     remark = models.CharField(max_length=100)
 
 
@@ -46,7 +49,8 @@ class ContactInfo(models.Model):
 
 
 class Section(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

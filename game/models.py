@@ -2,7 +2,8 @@ from django.db import models
 from home.models import Languages
 
 class Games(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     img = models.CharField(max_length=200)
     url = models.CharField(max_length=100)
 
@@ -16,13 +17,15 @@ class GameInfo(models.Model):
 
 
 class GameImages(models.Model):
-    code = models.IntegerField(unique=True, default=0)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     img = models.CharField(max_length=300)
     url = models.CharField(max_length=300)
 
 
 class GSection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

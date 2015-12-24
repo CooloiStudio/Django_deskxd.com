@@ -8,7 +8,7 @@ class InfoInline(admin.StackedInline):
 
 
 class InformationAdmin(admin.ModelAdmin):
-    list_display = ('code', 'img', )
+    list_display = ('code', 'sort', 'img', )
     inlines = [InfoInline]
 
 
@@ -18,7 +18,7 @@ class ProtocolInline(admin.StackedInline):
 
 
 class ProtocolAdmin(admin.ModelAdmin):
-    list_display = ('code', 'url', )
+    list_display = ('code', 'sort', 'url', )
     inlines = [ProtocolInline]
 
 
@@ -28,7 +28,7 @@ class InfoSectionInline(admin.StackedInline):
 
 
 class InfoSectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [InfoSectionInline]
 
 

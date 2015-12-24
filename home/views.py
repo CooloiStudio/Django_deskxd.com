@@ -29,7 +29,7 @@ class IndexViews(generic.View):
             raise Http404
 
 
-        introduceimages = list(IntroduceImage.objects.all().order_by("code"))
+        introduceimages = list(IntroduceImage.objects.all().order_by("sort"))
         if introduceimages:
             introduce_list = []
             for p in introduceimages:
@@ -81,7 +81,7 @@ class IndexViews(generic.View):
             members_list = []
 
 
-        menus = list(Menu.objects.all().order_by('code'))
+        menus = list(Menu.objects.all().order_by('sort'))
         if menus:
             menu_list = []
             for p in menus:
@@ -95,7 +95,7 @@ class IndexViews(generic.View):
             menu_list = []
 
 
-        informations = list(Information.objects.all().order_by('code'))
+        informations = list(Information.objects.all().order_by('sort'))
         if informations:
             i = 3
             info_list = []
@@ -113,7 +113,7 @@ class IndexViews(generic.View):
             info_list = []
 
 
-        contacts = list(Contact.objects.all().order_by('code'))
+        contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
             c_list = []
             for p in contacts:
@@ -135,7 +135,7 @@ class IndexViews(generic.View):
             contact_list = []
 
 
-        sections = list(Section.objects.all().order_by('code'))
+        sections = list(Section.objects.all().order_by('sort'))
         if sections:
             section_list = []
             for p in sections:
@@ -166,16 +166,3 @@ class IndexViews(generic.View):
                 self.templates_file,
                 context,
                 context_instance=RequestContext(request))
-
-
-# def homeindex(request):
-#     lang = request.LANGUAGE_CODE
-#     print lang
-#
-#     context = {
-#         'lang': lang,
-#     }
-#     return render_to_response(
-#             'Index.html',
-#             context,
-#             context_instance=RequestContext(request))

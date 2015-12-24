@@ -24,7 +24,7 @@ class AgreeViews(generic.View):
             raise Http404
 
 
-        menus = list(Menu.objects.all().order_by('code'))
+        menus = list(Menu.objects.all().order_by('sort'))
         if menus:
             menu_list = []
             for p in menus:
@@ -38,7 +38,7 @@ class AgreeViews(generic.View):
             menu_list = []
 
 
-        contacts = list(Contact.objects.all().order_by('code'))
+        contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
             c_list = []
             for p in contacts:
@@ -60,7 +60,7 @@ class AgreeViews(generic.View):
             contact_list = []
 
 
-        sections = list(ASection.objects.all().order_by('code'))
+        sections = list(ASection.objects.all().order_by('sort'))
         if sections:
             section_list = []
             for p in sections:
@@ -116,7 +116,7 @@ class PrivacyViews(generic.View):
             raise Http404
 
 
-        menus = list(Menu.objects.all().order_by('code'))
+        menus = list(Menu.objects.all().order_by('sort'))
         if menus:
             menu_list = []
             for p in menus:
@@ -130,7 +130,7 @@ class PrivacyViews(generic.View):
             menu_list = []
 
 
-        contacts = list(Contact.objects.all().order_by('code'))
+        contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
             c_list = []
             for p in contacts:
@@ -152,7 +152,7 @@ class PrivacyViews(generic.View):
             contact_list = []
 
 
-        sections = list(PSection.objects.all().order_by('code'))
+        sections = list(PSection.objects.all().order_by('sort'))
         if sections:
             section_list = []
             for p in sections:

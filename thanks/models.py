@@ -8,7 +8,8 @@ class Thanks(models.Model):
 
 
 class TSection(models.Model):
-    code = models.IntegerField(unique=True)
+    code = models.CharField(max_length=100)
+    sort = models.IntegerField(unique=True)
     basepage = models.CharField(max_length=200)
 
 

@@ -25,7 +25,7 @@ class IndexViews(generic.View):
             raise Http404
 
 
-        menus = list(Menu.objects.all().order_by('code'))
+        menus = list(Menu.objects.all().order_by('sort'))
         if menus:
             menu_list = []
             for p in menus:
@@ -39,7 +39,7 @@ class IndexViews(generic.View):
             menu_list = []
 
 
-        contacts = list(Contact.objects.all().order_by('code'))
+        contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
             c_list = []
             for p in contacts:
@@ -61,7 +61,7 @@ class IndexViews(generic.View):
             contact_list = []
 
 
-        sections = list(GSection.objects.all().order_by('code'))
+        sections = list(GSection.objects.all().order_by('sort'))
         if sections:
             section_list = []
             for p in sections:
@@ -77,7 +77,7 @@ class IndexViews(generic.View):
             section_list = []
 
 
-        games = list(Games.objects.all().order_by("code"))
+        games = list(Games.objects.all().order_by('sort'))
         if games:
             game_list = []
             for p in games:

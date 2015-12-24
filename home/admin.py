@@ -21,7 +21,7 @@ class MenuInfoInline(admin.StackedInline):
 
 
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('code', 'url', )
+    list_display = ('code', 'sort', 'url', )
     inlines = [MenuInfoInline]
 
 
@@ -31,7 +31,7 @@ class ContactInline(admin.StackedInline):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('code', 'remark', )
+    list_display = ('code', 'sort', 'remark', )
     inlines = [ContactInline]
 
 
@@ -41,7 +41,7 @@ class SectionInline(admin.StackedInline):
 
 
 class SectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [SectionInline]
 
 

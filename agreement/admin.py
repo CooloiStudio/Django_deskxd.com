@@ -14,7 +14,7 @@ class ASectionInline(admin.StackedInline):
 
 
 class ASectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [ASectionInline]
 
 
@@ -24,7 +24,7 @@ class PSectionInline(admin.StackedInline):
 
 
 class PSectionAdmin(admin.ModelAdmin):
-    list_display = ('code', 'basepage', )
+    list_display = ('code', 'sort', 'basepage', )
     inlines = [PSectionInline]
 
 
