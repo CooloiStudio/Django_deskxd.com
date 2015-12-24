@@ -18,7 +18,7 @@
 				target = $this.attr('target');
 
 			b.push(
-				'<a ' +
+				'<a ' + 'onclick="launch(this)"' +
 					'class="link depth-' + indent + '"' +
 					( (typeof target !== 'undefined' && target != '') ? ' target="' + target + '"' : '') +
 					( (typeof href !== 'undefined' && href != '') ? ' href="' + href + '"' : '') +

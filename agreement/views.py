@@ -9,10 +9,7 @@ class AgreeViews(generic.View):
 
     def get(self, request):
 
-        if 'lang' in request.GET and request.GET['lang']:
-            lang = request.GET['lang']
-        else:
-            lang = "zh-cn"
+        lang = request.LANGUAGE_CODE
 
 
         languages = list(Languages.objects.all())
@@ -104,10 +101,7 @@ class PrivacyViews(generic.View):
 
     def get(self, request):
 
-        if 'lang' in request.GET and request.GET['lang']:
-            lang = request.GET['lang']
-        else:
-            lang = "zh-cn"
+        lang = request.LANGUAGE_CODE
 
 
         languages = list(Languages.objects.all())

@@ -17,10 +17,7 @@ class IndexViews(generic.View):
         else:
             thankss = []
 
-        if 'lang' in request.GET and request.GET['lang']:
-            lang = request.GET['lang']
-        else:
-            lang = "zh-cn"
+        lang = request.LANGUAGE_CODE
 
 
         languages = list(Languages.objects.all())

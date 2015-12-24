@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.views import generic
 from home.models import *
 from game.models import *
@@ -6,6 +6,7 @@ from information.models import *
 from member.models import *
 from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
+from django.template import RequestContext
 import random
 
 
@@ -14,11 +15,7 @@ class IndexViews(generic.View):
 
     def get(self, request):
 
-        if 'lang' in request.GET and request.GET['lang']:
-            lang = request.GET['lang']
-        else:
-            lang = "zh-cn"
-
+        lang = request.LANGUAGE_CODE
 
         languages = list(Languages.objects.all())
         if not languages:
@@ -165,6 +162,20 @@ class IndexViews(generic.View):
             "contact_list": contact_list,
             "section_list": section_list
         }
-        return render(request,
-                      self.templates_file,
-                      context)
+        return render_to_response(
+                self.templates_file,
+                context,
+                context_instance=RequestContext(request))
+
+
+# def homeindex(request):
+#     lang = request.LANGUAGE_CODE
+#     print lang
+#
+#     context = {
+#         'lang': lang,
+#     }
+#     return render_to_response(
+#             'Index.html',
+#             context,
+#             context_instance=RequestContext(request))

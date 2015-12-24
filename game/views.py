@@ -4,17 +4,14 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.http import Http404
 from game.models import *
 from home.models import *
+from django.utils.translation import ugettext
 
 class IndexViews(generic.View):
     templates_file = 'GameIndex.html'
 
     def get(self, request):
 
-        if 'lang' in request.GET and request.GET['lang']:
-            lang = request.GET['lang']
-        else:
-            lang = "zh-cn"
-
+        lang = request.LANGUAGE_CODE
 
         languages = list(Languages.objects.all())
         if not languages:
