@@ -14,10 +14,10 @@
 	<body class="homepage">
 
         <script>
-             function changelang(){
-                 myform = document.getElementById('langform');
-                 myform.submit();
-             }
+            function changelang(){
+                myform = document.getElementById('langform');
+                myform.submit();
+            }
             function launch(object){
                 var a = $(object).text();
                 var count=$("#language option").length;
@@ -64,7 +64,7 @@
                                                 <ul>
                                                     {% for l in LANGUAGES %}
                                                         <li>
-                                                            <a onclick="launch(this)" {% if l.0 == lang %}style="color: #e97770; text-align: center;"{% else %}style="text-align: center;"{% endif %} hreflang="{{ l.0 }}" >{% trans l.0 %}</a>
+                                                            <a onclick="launch(this)" {% if l.0 == lang %}style="color: #e97770; text-align: center;"{% else %}style="text-align: center;"{% endif %}>{% trans l.0 %}</a>
                                                         </li>
                                                     {% endfor %}
                                                 </ul>
