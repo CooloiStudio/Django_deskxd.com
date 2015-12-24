@@ -38,7 +38,6 @@ class MenuInfo(models.Model):
 class Contact(models.Model):
     code = models.CharField(max_length=100)
     sort = models.IntegerField(unique=True)
-    remark = models.CharField(max_length=100)
 
 
 class ContactInfo(models.Model):

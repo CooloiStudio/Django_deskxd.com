@@ -31,7 +31,7 @@ class ContactInline(admin.StackedInline):
 
 
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ('code', 'sort', 'remark', )
+    list_display = ('code', 'sort', )
     inlines = [ContactInline]
 
 
