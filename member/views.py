@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from member.models import *
 from home.models import *
 from django.http import Http404
+import re
 
 class IndexViews(generic.View):
     templates_file = 'MemberIndex.html'
@@ -36,10 +37,16 @@ class IndexViews(generic.View):
                         minfos = list(MemberInfo.objects.filter(language=dlang, member=p.id))
                         if minfos:
                             for m in minfos:
-                                a = {'name': m.name, 'img': p.img, 'url': p.url, 'signature': m.signature}
+                                if re.match('[a-zA-z]+://[^\s]*', p.img):
+                                    a = {'name': m.name, 'img': p.img, 'url': p.url, 'signature': m.signature}
+                                else:
+                                    a = {'name': m.name, 'img': "", 'url': p.url, 'signature': m.signature}
                                 g_list.append(a)
                         else:
-                            a = {'name': "", 'img': p.img, 'url': p.url, 'signature': ""}
+                            if re.match('[a-zA-z]+://[^\s]*', p.img):
+                                a = {'name': "", 'img': p.img, 'url': p.url, 'signature': ""}
+                            else:
+                                a = {'name': "", 'img': "", 'url': p.url, 'signature': ""}
                             g_list.append(a)
                 else:
                     g_list = []

@@ -19,7 +19,9 @@
                             {% for m in p.members %}
                                 <div class="4u 12u(mobile)">
                                     <section class="highlight">
-                                        <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
+                                        {% if m.img != "" %}
+                                            <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
+                                        {% endif %}
                                         <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
                                         <p style="text-align: justify;">{{ m.signature|safe }}</p>
                                     </section>
