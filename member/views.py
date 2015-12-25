@@ -44,7 +44,7 @@ class IndexViews(generic.View):
                 else:
                     g_list = []
                 b = {"group": q.name, "members": g_list}
-                members_list.append(g_list)
+                members_list.append(b)
         else:
             members_list = []
 
