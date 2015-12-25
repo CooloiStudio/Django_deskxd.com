@@ -13,10 +13,18 @@ class Privacy(models.Model):
     content = UEditorField(u'Privacy', width=1200, height=600, toolbars="full", imagePath="", filePath="", upload_settings={"imageMaxSize":1204000}, settings={}, command=None, blank=True)
 
 
+class ABasePage(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    remark = models.TextField(null=True)
+
+    def __unicode__(self):
+        return self.name + "[" + self.remark + "]"
+
+
 class ASection(models.Model):
     code = models.CharField(max_length=100)
     sort = models.IntegerField(unique=True)
-    basepage = models.CharField(max_length=200)
+    basepage = models.ForeignKey(ABasePage)
 
 
 class ASectionInfo(models.Model):
@@ -30,7 +38,7 @@ class ASectionInfo(models.Model):
 class PSection(models.Model):
     code = models.CharField(max_length=100)
     sort = models.IntegerField(unique=True)
-    basepage = models.CharField(max_length=200)
+    basepage = models.ForeignKey(ABasePage)
 
 
 class PSectionInfo(models.Model):

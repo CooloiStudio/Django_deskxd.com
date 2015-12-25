@@ -28,7 +28,11 @@ class PSectionAdmin(admin.ModelAdmin):
     inlines = [PSectionInline]
 
 
+class ABasePageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'remark', )
 
+
+admin.site.register(ABasePage, ABasePageAdmin)
 admin.site.register(Agreement, AgreementAdmin)
 admin.site.register(Privacy, PrivacyAdmin)
 admin.site.register(ASection, ASectionAdmin)

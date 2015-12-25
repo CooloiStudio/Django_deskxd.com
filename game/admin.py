@@ -23,6 +23,11 @@ class GSectionAdmin(admin.ModelAdmin):
     inlines = [GSectionInline]
 
 
+class GBasePageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'remark', )
+
+
+admin.site.register(GBasePage, GBasePageAdmin)
 admin.site.register(Games, GameAdmin)
 admin.site.register(GameImages, GameImagesAdmin)
 admin.site.register(GSection, GSectionAdmin)

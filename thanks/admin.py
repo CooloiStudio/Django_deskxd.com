@@ -15,5 +15,10 @@ class TSectionAdmin(admin.ModelAdmin):
     inlines = [TSectionInline]
 
 
+class TBasePageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'remark', )
+
+
+admin.site.register(TBasePage, TBasePageAdmin)
 admin.site.register(Thanks, ThanksAdmin)
 admin.site.register(TSection, TSectionAdmin)

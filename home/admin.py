@@ -45,7 +45,11 @@ class SectionAdmin(admin.ModelAdmin):
     inlines = [SectionInline]
 
 
+class BasePageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'remark', )
 
+
+admin.site.register(BasePage, BasePageAdmin)
 admin.site.register(Languages, LanguageAdmin)
 admin.site.register(IntroduceImage, IntroduceImageAdmin)
 admin.site.register(Menu, MenuAdmin)

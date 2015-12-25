@@ -7,10 +7,18 @@ class Thanks(models.Model):
     url = models.CharField(max_length=500)
 
 
+class TBasePage(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    remark = models.TextField(null=True)
+
+    def __unicode__(self):
+        return self.name + "[" + self.remark + "]"
+
+
 class TSection(models.Model):
     code = models.CharField(max_length=100)
     sort = models.IntegerField(unique=True)
-    basepage = models.CharField(max_length=200)
+    basepage = models.ForeignKey(TBasePage)
 
 
 class TSectionInfo(models.Model):

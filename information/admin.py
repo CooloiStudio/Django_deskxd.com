@@ -32,6 +32,11 @@ class InfoSectionAdmin(admin.ModelAdmin):
     inlines = [InfoSectionInline]
 
 
+class IBasePageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'remark', )
+
+
 admin.site.register(Information, InformationAdmin)
 admin.site.register(Protocol, ProtocolAdmin)
 admin.site.register(InfoSection, InfoSectionAdmin)
+admin.site.register(IBasePage, IBasePageAdmin)

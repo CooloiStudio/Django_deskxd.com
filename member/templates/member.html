@@ -12,17 +12,20 @@
                     </header>
                 </article>
                 <div id="highlights" class="container">
-                    <div class="row 150%">
-                        {% for m in members_list %}
-                        <div class="4u 12u(mobile)">
-                            <section class="highlight">
-                                <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
-                                <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
-                                <p style="text-align: justify;">{{ m.signature|safe }}</p>
-                            </section>
+                    {% for p in members_list %}
+                        <h1 style="font-size: 1.5em; margin-top:40px; margin-bottom:20px;">{% trans p.group %}</h1>
+                        <div class="row 150%">
+                            {% for m in p.members %}
+                                <div class="4u 12u(mobile)">
+                                    <section class="highlight">
+                                        <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
+                                        <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
+                                        <p style="text-align: justify;">{{ m.signature|safe }}</p>
+                                    </section>
+                                </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 

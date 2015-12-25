@@ -25,18 +25,26 @@ class IndexViews(generic.View):
             raise Http404
 
 
-        members = list(Member.objects.all())
-        if members:
+        groups = list(Group.objects.all().order_by('sort'))
+        if groups:
             members_list = []
-            for p in members:
-                minfos = list(MemberInfo.objects.filter(language=dlang, member=p.id))
-                if minfos:
-                    for m in minfos:
-                        a = {'name': m.name, 'img': p.img, 'url': p.url, 'signature': m.signature}
-                        members_list.append(a)
+            for q in groups:
+                members = list(Member.objects.filter(group=q.id))
+                if members:
+                    g_list = []
+                    for p in members:
+                        minfos = list(MemberInfo.objects.filter(language=dlang, member=p.id))
+                        if minfos:
+                            for m in minfos:
+                                a = {'name': m.name, 'img': p.img, 'url': p.url, 'signature': m.signature}
+                                g_list.append(a)
+                        else:
+                            a = {'name': "", 'img': p.img, 'url': p.url, 'signature': ""}
+                            g_list.append(a)
                 else:
-                    a = {'name': "", 'img': p.img, 'url': p.url, 'signature': ""}
-                    members_list.append(a)
+                    g_list = []
+                b = {"group": q.name, "members": g_list}
+                members_list.append(g_list)
         else:
             members_list = []
 
@@ -84,10 +92,10 @@ class IndexViews(generic.View):
                 sectioninfos = list(MSectionInfo.objects.filter(language=dlang, section=p.id))
                 if sectioninfos:
                     for q in sectioninfos:
-                        a = {"basepage": p.basepage, "name": q.name, "title": q.title, "subtitle":q.subtitle}
+                        a = {"basepage": p.basepage.name, "name": q.name, "title": q.title, "subtitle":q.subtitle}
                         section_list.append(a)
                 else:
-                    a = {"basepage": p.basepage, "name": "", "title": "", "subtitle": ""}
+                    a = {"basepage": p.basepage.name, "name": "", "title": "", "subtitle": ""}
                     section_list.append(a)
         else:
             section_list = []
