@@ -68,10 +68,10 @@ class IndexViews(generic.View):
                 infoinfos = list(InformationInfo.objects.filter(language=dlang, infos=p.id))
                 if infoinfos:
                     for q in infoinfos:
-                        a = {"code": p.code, "img": p.img, "name": q.name, "introduce": q.introduce}
+                        a = {"sort": p.sort, "img": p.img, "name": q.name, "introduce": q.introduce}
                         info_list.append(a)
                 else:
-                    a = {"code": p.code, "img": p.img, "name": "", "introduce": ""}
+                    a = {"sort": p.sort, "img": p.img, "name": "", "introduce": ""}
                     info_list.append(a)
         else:
             info_list = []
