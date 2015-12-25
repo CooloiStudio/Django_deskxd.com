@@ -13,7 +13,7 @@ class MemberAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ('name', )
+    list_display = ('id', 'name', )
 
 
 class MSectionInline(admin.StackedInline):

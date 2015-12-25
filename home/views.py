@@ -60,7 +60,7 @@ class IndexViews(generic.View):
 
 
 
-        members = list(Member.objects.all())
+        members = list(Member.objects.filter(group=1))
         if members:
             random.shuffle(members)
             i = 4
@@ -159,8 +159,8 @@ class IndexViews(generic.View):
             'lang': lang,
             'menu_list': menu_list,
             'info_list': info_list,
-            "contact_list": contact_list,
-            "section_list": section_list
+            'contact_list': contact_list,
+            'section_list': section_list
         }
         return render_to_response(
                 self.templates_file,
