@@ -37,3 +37,10 @@ msgstr "日本語"
 
 msgid "ja-jp"
 msgstr "日本語"
+
+
+msgid "Support"
+msgstr "协力"
+
+msgid "Employee"
+msgstr "雇员"
