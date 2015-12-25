@@ -40,7 +40,7 @@ msgstr "日本語"
 
 
 msgid "Support"
-msgstr "Support"
+msgstr "Supports"
 
 msgid "Employee"
 msgstr "Employee"
