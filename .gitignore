@@ -61,3 +61,4 @@ target/
 deskxd_com/settings.py
 config/*
 static/dir/*
+locale/*
