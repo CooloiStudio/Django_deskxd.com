@@ -7,26 +7,28 @@
         <!-- Content -->
             <div id="content">
                 <article class="box post">
-                    <header class="style1">
+                    <header class="style1" style="padding-bottom: 0px;">
                         <h2>{{ p.title }}</h2>
                         <p>{{ p.subtitle }}</p>
                     </header>
                 </article>
                 <div id="highlights" class="container">
                     {% for p in members_list %}
-                        <h1 style="font-size: 1.5em; margin-top:40px; margin-bottom:40px; text-align: center;">{% trans p.group %}</h1>
-                        <div class="row 150%">
-                            {% for m in p.members %}
-                                <div class="4u 12u(mobile)">
-                                    <section class="highlight">
-                                        {% if m.img != "" %}
-                                            <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
-                                        {% endif %}
-                                        <h3><a href="{{ m.url }}">{{ m.name }}</a></h3>
-                                        <p style="text-align: center;">{{ m.signature|safe }}</p>
-                                    </section>
-                                </div>
-                            {% endfor %}
+                        <h1 style="font-size: 1.5em; margin-top:60px; margin-bottom:60px; text-align: center;">{% trans p.group %}</h1>
+                        <div style="width:50%; margin: 0 auto">
+                            <div class="row">
+                                {% for m in p.members %}
+                                    <div class="4u 12u(mobile)">
+                                        <section class="highlight">
+                                            {% if m.img != "" %}
+                                                <a href="{{ m.url }}" class="image featured"><img src="{{ m.img }}" alt="" /></a>
+                                            {% endif %}
+                                            <h3 style="font-size: 1em;"><a href="{{ m.url }}">{{ m.name }}</a></h3>
+                                            <p style="text-align: center; font-size: 0.7em;">{{ m.signature|safe }}</p>
+                                        </section>
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
