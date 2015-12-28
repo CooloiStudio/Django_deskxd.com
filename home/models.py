@@ -46,6 +46,8 @@ class ContactInfo(models.Model):
     contact = models.ForeignKey(Contact)
     name = models.CharField(max_length=200)
     text = models.TextField(null=True)
+    img = models.CharField(max_length=500, null=True)
+    url = models.CharField(max_length=200, null=True)
 
 
 class BasePage(models.Model):

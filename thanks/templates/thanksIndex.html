@@ -92,7 +92,9 @@
                             <!-- Contact Form -->
                                 <section>
                                     <div style="text-align: center; margin-top: 60px;">
-                                        <img src="http://ww1.sinaimg.cn/large/006bwLnEgw1ez7cboh2wkj306y06ydgw.jpg" />
+                                        {% for p in qr_list %}
+                                            <img src="{{ p }}" />
+                                        {% endfor %}
                                     </div>
                                 </section>
 
