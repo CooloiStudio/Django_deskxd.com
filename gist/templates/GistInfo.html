@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    {% load static from staticfiles %}
+    {% load i18n %}
+	<head>
+		<title>DeskXD 贤卓</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
+{#		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->#}
+		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
+{#		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->#}
+	</head>
+	<body class="homepage">
+
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper" class="wrapper">
+					<div id="header" style="z-index: 1 !important;">
+
+						<!-- Logo -->
+							<div id="logo" class="logo-font">
+								<h1><a href="/">DeskXD Chengdu</a></h1>
+								<p>成都贤卓新信息技术有限公司</p>
+							</div>
+
+					</div>
+				</div>
+
+
+            <div class="wrapper style2">
+                    <div class="title">GistInfo</div>
+                    <div id="main" class="container">
+
+                        <!-- Content -->
+                            <div id="content">
+                                {% for p in post_list %}
+                                    <div style="width: 60%; margin: 0 auto;">
+                                        Group:<p style="color: #000000; font-size: 1.5em; margin-bottom: 0.5em;">{{ p.category }}</p>
+                                        Title:<p style="color: #000000; font-size: 1.5em; margin-bottom: 0.5em;">{{ p.title }}</p>
+                                        Date:<p style="margin-bottom: 0.5em;">{{ p.date }}</p>
+                                        Text:
+                                        {{ p.body|safe }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                    </div>
+                </div>
+
+
+            <!-- Footer -->
+                <div id="footer-wrapper" class="wrapper" style="padding-bottom: 4em;">
+                    <div id="copyright">
+                        <ul>
+                            <li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a><li>
+                        </ul>
+                    </div>
+                </div>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'deskxd/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/jquery.dropotron.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/skel-viewport.min.js' %}"></script>
+			<script src="{% static 'deskxd/assets/js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/respond.min.js' %}"></script><![endif]-->
+			<script src="{% static 'deskxd/assets/js/main.js' %}"></script>
+	</body>
+</html>
