@@ -61,6 +61,11 @@
 		height: 800px;
 	}
 
+	#gist{
+		width: 60%;
+		margin: 0 auto;
+	}
+
 
 /* Box Model */
 
@@ -2361,6 +2366,11 @@
 			.games-name a{
 				text-decoration: none;
 				font-size: 1.3em;
+			}
+			#gist{
+				width: 100%;
+				margin: 0 auto;
+				overflow-x: scroll;
 			}
 
 		/* Basic */
