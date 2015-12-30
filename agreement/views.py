@@ -40,24 +40,42 @@ class AgreeViews(generic.View):
 
         contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
+            qr_list = []
             c_list = []
             for p in contacts:
                 cinfos = list(ContactInfo.objects.filter(language=dlang, contact=p.id))
                 if cinfos:
-                    for q in cinfos:
-                        a = {"remark": p.remark, "name": q.name, "text": q.text}
-                        c_list.append(a)
+                    if p.code == "QR":
+                        for q in cinfos:
+                            qr = q.img
+                            qr_list.append(qr)
+                    else:
+                        cinfo_list = []
+                        for q in cinfos:
+                            b = {"text": q.text, "img": q.img, "url": q.url,}
+                            cinfo_list.append(b)
+                        for m in cinfos:
+                            if m.name == a["name"]:
+                                break
+                            a = {"remark": p.remark, "code": p.code, "name": m.name, "info": cinfo_list}
+                            c_list.append(a)
                 else:
-                    a = {"remark": p.remark, "name": "", "text": ""}
-                    c_list.append(a)
+                    if p.code == "QR":
+                        qr = ""
+                        qr_list.append(qr)
+                    else:
+                        a = {"remark": p.remark, "code": p.code, "name": "", "info": []}
+                        c_list.append(a)
 
             def group_list(l, block):
                 size = len(l)
                 return [l[i:i+block] for i in range(0, size, block)]
 
             contact_list = group_list(c_list, 2)
+            print qr_list, contact_list
         else:
             contact_list = []
+            qr_list = []
 
 
         sections = list(ASection.objects.all().order_by('sort'))
@@ -88,7 +106,8 @@ class AgreeViews(generic.View):
             'menu_list': menu_list,
             'lang': lang,
             'languages': languages,
-            "section_list": section_list
+            "section_list": section_list,
+            'qr_list': qr_list
         }
 
         return render(request,
@@ -132,24 +151,42 @@ class PrivacyViews(generic.View):
 
         contacts = list(Contact.objects.all().order_by('sort'))
         if contacts:
+            qr_list = []
             c_list = []
             for p in contacts:
                 cinfos = list(ContactInfo.objects.filter(language=dlang, contact=p.id))
                 if cinfos:
-                    for q in cinfos:
-                        a = {"remark": p.remark, "name": q.name, "text": q.text}
-                        c_list.append(a)
+                    if p.code == "QR":
+                        for q in cinfos:
+                            qr = q.img
+                            qr_list.append(qr)
+                    else:
+                        cinfo_list = []
+                        for q in cinfos:
+                            b = {"text": q.text, "img": q.img, "url": q.url,}
+                            cinfo_list.append(b)
+                        for m in cinfos:
+                            if m.name == a["name"]:
+                                break
+                            a = {"remark": p.remark, "code": p.code, "name": m.name, "info": cinfo_list}
+                            c_list.append(a)
                 else:
-                    a = {"remark": p.remark, "name": "", "text": ""}
-                    c_list.append(a)
+                    if p.code == "QR":
+                        qr = ""
+                        qr_list.append(qr)
+                    else:
+                        a = {"remark": p.remark, "code": p.code, "name": "", "info": []}
+                        c_list.append(a)
 
             def group_list(l, block):
                 size = len(l)
                 return [l[i:i+block] for i in range(0, size, block)]
 
             contact_list = group_list(c_list, 2)
+            print qr_list, contact_list
         else:
             contact_list = []
+            qr_list = []
 
 
         sections = list(PSection.objects.all().order_by('sort'))
@@ -182,7 +219,8 @@ class PrivacyViews(generic.View):
             'menu_list': menu_list,
             'lang': lang,
             'languages': languages,
-            "section_list": section_list
+            "section_list": section_list,
+            'qr_list': qr_list,
         }
 
         return render(request,

@@ -94,7 +94,9 @@
                             <!-- Contact Form -->
                                 <section>
                                     <div style="text-align: center; margin-top: 60px;">
-                                        <img src="http://ww1.sinaimg.cn/large/006bwLnEgw1ez7cboh2wkj306y06ydgw.jpg" />
+                                        {% for p in qr_list %}
+                                            <img src="{{ p }}" />
+                                        {% endfor %}
                                     </div>
                                 </section>
 
@@ -102,13 +104,28 @@
                             <div class="6u 12u(mobile)">
                             <!-- Contact -->
                                 <section class="feature-list small" style="margin-top: 30px;">
-                                    {% for p in contact_list %}
+                                    {% for contact in contact_list %}
                                         <div class="row">
-                                            {% for q in p %}
+                                            {% for p in contact %}
                                                 <div class="6u 12u(mobile)">
                                                     <section>
-                                                        <h3 class="icon fa-{{ q.remark }}">{{ q.name }}</h3>
-                                                        <p>{{ q.text|safe }}</p>
+                                                        <h3 class="icon fa-{{ p.remark }}">{{ p.name }}</h3>
+                                                        {% for q in p.info %}
+                                                            <p>
+                                                            {% if p.code == "address" %}
+                                                                {{ q.text|safe }}
+                                                            {% elif p.code == "social" %}
+                                                                <a href="{{ q.url }}">
+                                                                    <img src="{{ q.img }}" style="width: 30px !important; margin-right: 5px !important;"/>
+                                                                    {{ q.text }}
+                                                                </a>
+                                                            {% elif p.code == "mail" %}
+                                                                <a href="{{ q.url }}">{{ q.text }}</a>
+                                                            {% elif p.code == "phone" %}
+                                                                {{ q.text }}
+                                                            {% endif %}
+                                                            </p>
+                                                        {% endfor %}
                                                     </section>
                                                 </div>
                                             {% endfor %}
@@ -124,6 +141,7 @@
                             <li>&copy; DeskXD.com</li><li>蜀ICP备15029549号</li><li><a href="/thanks">Thanks</a><li>
                         </ul>
                     </div>
+                </div>
                 </div>
 
 		</div>
