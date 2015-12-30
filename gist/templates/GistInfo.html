@@ -10,6 +10,9 @@
 {#		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->#}
 		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
 {#		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->#}
+        <link rel="stylesheet" href="{% static 'deskxd/assets/css/github.css' %}" />
+        <link rel="stylesheet" href="{% static 'deskxd/assets/css/github2.css' %}" />
+        <link rel="stylesheet" href="{% static 'deskxd/assets/css/gist.css' %}" />
 	</head>
 	<body class="homepage">
 
@@ -37,11 +40,14 @@
                             <div id="content">
                                 {% for p in post_list %}
                                     <div style="width: 60%; margin: 0 auto;">
-                                        Group:<p style="color: #000000; font-size: 1.5em; margin-bottom: 0.5em;">{{ p.category }}</p>
+                                        Group:<p><a style="font-size: 2.5em;" href="/gist">{{ p.category }}</a></p>
                                         Title:<p style="color: #000000; font-size: 1.5em; margin-bottom: 0.5em;">{{ p.title }}</p>
                                         Date:<p style="margin-bottom: 0.5em;">{{ p.date }}</p>
                                         Text:
+                                        <article class="markdown-body entry-content" itemprop="mainContentOfPage">
                                         {{ p.body|safe }}
+                                        </article>
+                                        <p><a style="font-size: 2em;" href="/gist">返回列表</a></p>
                                     </div>
                                 {% endfor %}
                             </div>
