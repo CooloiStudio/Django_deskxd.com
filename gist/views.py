@@ -63,3 +63,17 @@ class InfoViews(generic.View):
         return render(request,
                       self.templates_file,
                       context)
+
+
+class PostViews(generic.View):
+    templates_file = 'post.html'
+
+    def get(self, request):
+
+
+        context = {
+        }
+
+        return render(request,
+                      self.templates_file,
+                      context)
