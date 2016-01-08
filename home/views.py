@@ -147,7 +147,6 @@ class IndexViews(generic.View):
                 return [l[i:i+block] for i in range(0, size, block)]
 
             contact_list = group_list(c_list, 2)
-            print qr_list, contact_list
         else:
             contact_list = []
             qr_list = []
@@ -181,7 +180,6 @@ class IndexViews(generic.View):
             'qr_list': qr_list,
             'section_list': section_list
         }
-        return render_to_response(
-                self.templates_file,
-                context,
-                context_instance=RequestContext(request))
+        return render(request,
+                      self.templates_file,
+                      context)

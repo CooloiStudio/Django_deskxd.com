@@ -3,6 +3,11 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(max_length=20)
 
+    class Meta:
+        permissions = (
+            ("can_post", "Can post"),
+        )
+
     def __unicode__(self):
         return self.name
 
@@ -10,7 +15,7 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=60)
-    body = models.TextField()
+    url = models.CharField(max_length=500)
     date = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):

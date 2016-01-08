@@ -53,6 +53,7 @@ class InfoViews(generic.View):
                 post_list = []
         else:
             postid = ""
+            post_list = []
 
 
         context = {
@@ -70,9 +71,7 @@ class PostViews(generic.View):
 
     def get(self, request):
 
-
-        context = {
-        }
+        context = {}
 
         return render(request,
                       self.templates_file,

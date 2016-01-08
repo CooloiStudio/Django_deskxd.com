@@ -9,9 +9,6 @@
 {#		<!--[if lte IE 8]><script src="{% static 'deskxd/assets/js/ie/html5shiv.js' %}"></script><![endif]-->#}
 		<link rel="stylesheet" href="{% static 'deskxd/assets/css/main.css' %}" />
 {#		<!--[if lte IE 8]><link rel="stylesheet" href="{% static 'deskxd/assets/css/ie8.css' %}" /><![endif]-->#}
-        <link rel="stylesheet" href="{% static 'deskxd/assets/css/github.css' %}" />
-        <link rel="stylesheet" href="{% static 'deskxd/assets/css/github2.css' %}" />
-        <link rel="stylesheet" href="{% static 'deskxd/assets/css/gist.css' %}" />
         <style>
             #gist{
                 width: 80%;
@@ -32,27 +29,32 @@
         <div id="page-wrapper">
 
 			<!-- Header -->
-				<div id="header-wrapper" class="wrapper">
-					<div id="header" style="z-index: 1 !important;">
+            <div id="header-wrapper" class="wrapper">
+                <div id="header" style="z-index: 1 !important;">
 
-						<!-- Logo -->
-							<div id="logo" class="logo-font">
-								<h1><a href="/">DeskXD Chengdu</a></h1>
-								<p>成都贤卓新信息技术有限公司</p>
-							</div>
+                    <!-- Logo -->
+                        <div id="logo" class="logo-font">
+                            <h1><a href="/">DeskXD Chengdu</a></h1>
+                            <p>成都贤卓新信息技术有限公司</p>
+                        </div>
 
-					</div>
-				</div>
+                </div>
+            </div>
 
 
             <div class="wrapper style2">
                 <div class="title">PostInfo</div>
 
-                    <div id="layout">
-                        <div id="test-editormd">
-                            <textarea style="display:none;"></textarea>
+                    <form action="" method="post">
+                        <input type="text" name="title" style="margin-bottom: 30px; width: 400px;" placeholder="Title">
+                        <button type="submit" style="height: 35px; margin-bottom: 30px;">Post</button>
+                        <div id="layout">
+                            <div id="test-editormd">
+                                <textarea style="display:none;"></textarea>
+                            </div>
                         </div>
-                    </div>
+                    </form>
+
 
             </div>
 
