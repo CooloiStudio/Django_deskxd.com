@@ -42,7 +42,8 @@ class IndexViews(generic.View):
             category_list = []
 
         context = {
-            'category_list': category_list
+            'category_list': category_list,
+            'perm': perm
         }
 
         return render(request,
@@ -94,6 +95,9 @@ class PostViews(generic.View):
     templates_file = 'post.html'
 
     def get(self, request):
+
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect('/gist')
 
         category_list = list(Category.objects.all())
 
