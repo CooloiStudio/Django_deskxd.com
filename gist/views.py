@@ -5,7 +5,6 @@ from gist.models import *
 from django.contrib.auth.models import *
 
 import os
-import json
 import codecs
 
 class IndexViews(generic.View):
@@ -17,10 +16,13 @@ class IndexViews(generic.View):
             users = list(User.objects.filter(username=request.user))
             if users.pop().is_superuser:
                 perm = 1
+                print perm
             else:
                 perm = 0
+                print perm
         else:
             perm = 0
+            print "else" + str(perm)
 
         categorys = list(Category.objects.all())
         if categorys:
