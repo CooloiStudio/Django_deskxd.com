@@ -15,5 +15,5 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=60)
-    url = models.CharField(max_length=500)
+    url = models.CharField(max_length=500, null=True)
     date = models.DateTimeField(auto_now_add=True)

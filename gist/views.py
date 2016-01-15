@@ -128,19 +128,23 @@ def create(request):
     else:
         return HttpResponse("postbody is error")
 
-    path = os.path.dirname(__file__) + '/../static/editor/file/'
-
-    with codecs.open(path + title + '.md', 'w', 'utf-8') as content:
-        content.write(postbody)
-
-    url = 'editor/file/' + title + '.md'
-
     post = Post(
         category=categorys,
         title=title,
-        url=url
     )
     post.save()
+
+    path = os.path.dirname(__file__) + '/../static/editor/file/'
+
+    with codecs.open(path + 'editor_' + str(post.id) + '.md', 'w', 'utf-8') as content:
+        content.write(postbody)
+
+    url = 'editor/file/' + 'editor_' + str(post.id) + '.md'
+
+    uppost = Post.objects.filter(id=post.id)
+    for p in uppost:
+        p.url = url
+        p.save()
 
     return HttpResponseRedirect('/gist/info/?code=' + str(post.id))
 
