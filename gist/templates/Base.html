@@ -15,6 +15,12 @@
                 width: 100%;
                 margin: 0 auto;
             }
+            #test-editormd-view{
+                width: 60%;
+            }
+            #cat{
+                text-align: right;
+            }
             #gist h3{
                 font-size: 20px;
                 text-align: center;
@@ -25,6 +31,12 @@
                 #gist{
                     width: 100%;
                     text-align: left;
+                }
+                #test-editormd-view{
+                    width: 100% !important;
+                }
+                #cat{
+                    text-align: left !important;
                 }
             }
         </style>
@@ -51,27 +63,9 @@
             <div class="wrapper style2">
                     <div class="title">GistInfo</div>
                     <div id="main" class="container" style="width: 100%;">
+                        {% block content %}
 
-                        {% for p in post_list %}
-                            <div id="gist">
-                                <h3> <p style="font-size: 2em; margin-top: 20px; text-align: center">{{ p.title }}</p></h3>
-                                <div class="row" style="margin-bottom: 20px;">
-                                    <div class="6u 12u(mobile)" style="text-align: right;">
-                                        <h4><small>Group:</small><a style="font-size: 1.5em; border-bottom: 2px solid #000000; margin-left: 20px;" href="/gist">{{ p.category }}</a></h4>
-                                    </div>
-                                    <div class="6u 12u(mobile)" style="text-align: left;">
-                                        <h4><small>Date:</small> {{ p.date }}</h4>
-                                    </div>
-                                </div>
-                                {% if perm == 1 %}
-                                    {% include 'update.html' %}
-                                {% elif perm == 0 %}
-                                    {% include 'content.html' %}
-                                {% endif %}
-                                <p><a style="font-size: 2em;" href="/gist">返回列表</a></p>
-                            </div>
-                        {% endfor %}
-
+                        {% endblock %}
                     </div>
                 </div>
 

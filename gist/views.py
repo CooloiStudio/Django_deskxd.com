@@ -12,17 +12,10 @@ class IndexViews(generic.View):
 
     def get(self, request):
 
-        if request.user.is_authenticated():
-            users = list(User.objects.filter(username=request.user))
-            if users.pop().is_superuser:
-                perm = 1
-                print perm
-            else:
-                perm = 0
-                print perm
+        if request.user.is_authenticated() and request.user.has_perm('gist.can_post'):
+            perm = 1
         else:
             perm = 0
-            print "else" + str(perm)
 
         categorys = list(Category.objects.all())
         if categorys:
@@ -52,16 +45,12 @@ class IndexViews(generic.View):
 
 
 class InfoViews(generic.View):
-    templates_file = 'GistInfo.html'
+    templates_file = 'content.html'
 
     def get(self, request):
 
-        if request.user.is_authenticated():
-            users = list(User.objects.filter(username=request.user))
-            if users.pop().is_superuser:
-                perm = 1
-            else:
-                perm = 0
+        if request.user.is_authenticated() and request.user.has_perm('gist.can_post'):
+            perm = 1
         else:
             perm = 0
 
@@ -91,13 +80,50 @@ class InfoViews(generic.View):
                       context)
 
 
+class UpdateInfoViews(generic.View):
+    templates_file = 'update.html'
+
+    def get(self, request):
+
+        if 'code' in request.GET and request.GET['code']:
+            postid = int(request.GET['code'])
+            posts = list(Post.objects.filter(id=postid))
+            if posts:
+                post_list = []
+                for post in posts:
+                    a = {'category': post.category.name, 'title': post.title, 'url': post.url, 'date': post.date}
+                    post_list.append(a)
+            else:
+                post_list = []
+        else:
+            postid = ""
+            post_list = []
+
+
+        if not (request.user.is_authenticated() and request.user.has_perm('gist.can_post')):
+            return HttpResponseRedirect('/gist/info/?code=' + str(postid))
+
+
+        context = {
+            'post_list': post_list,
+            'postid': postid,
+        }
+
+        return render(request,
+                      self.templates_file,
+                      context)
+
+
 class PostViews(generic.View):
-    templates_file = 'post.html'
+    templates_file = 'edit/post.html'
 
     def get(self, request):
 
         if not request.user.is_authenticated():
             return HttpResponseRedirect('/gist')
+        else:
+            if not request.user.has_perm('gist.can_post'):
+                return HttpResponseRedirect('/gist')
 
         category_list = list(Category.objects.all())
 
@@ -108,6 +134,37 @@ class PostViews(generic.View):
         return render(request,
                       self.templates_file,
                       context)
+
+
+class GroupViews(generic.View):
+    templates_file = 'edit/group.html'
+
+    def get(self, request):
+
+        if not request.user.is_authenticated():
+            return HttpResponseRedirect('/gist')
+        else:
+            if not request.user.has_perm('gist.can_post'):
+                return HttpResponseRedirect('/gist')
+
+        context = {}
+
+        return render(request,
+                      self.templates_file,
+                      context)
+
+
+def create_group(request):
+
+    if 'category' in request.POST and request.POST['category']:
+        category = request.POST['category']
+    else:
+        return HttpResponse("category is error")
+
+    p = Category(name=category)
+    p.save()
+
+    return HttpResponseRedirect('/gist/post')
 
 
 def create(request):

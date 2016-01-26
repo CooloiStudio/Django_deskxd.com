@@ -1,65 +1,84 @@
+{% extends 'Base.html' %}
+{% block content %}
 {% load static from staticfiles %}
-<form action="{% url 'gist:update' %}" method="post">
-    {% csrf_token %}
-    {% if perm == 1  %}
-        <button type="submit" class="style1" style="margin-bottom: 20px;">保存</button>
-    {% endif %}
-    <input type="hidden" name="postpath" value="{{ p.url }}">
-    <input type="hidden" name="postid" value="{{ postid }}">
-    <div id="test-editormd">
-        <textarea style="display:none;" name="postbody"></textarea>
-    </div>
-</form>
-<script src="{% static 'editor/editor.md-master/examples/js/jquery.min.js' %}"></script>
-<script src="{% static 'editor/editor.md-master/editormd.js' %}"></script>
-<script type="text/javascript">
-    var testEditor;
+    {% for p in post_list %}
+        <div id="gist">
+            <h3> <p style="font-size: 2em; margin-top: 20px; text-align: center">{{ p.title }}</p></h3>
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="6u 12u(mobile)" style="text-align: right;">
+                    <h4><small>Group:</small><a style="font-size: 1.5em; border-bottom: 2px solid #000000; margin-left: 20px;" href="/gist">{{ p.category }}</a></h4>
+                </div>
+                <div class="6u 12u(mobile)" style="text-align: left;">
+                    <h4><small>Date:</small> {{ p.date }}</h4>
+                </div>
+            </div>
+            <form action="{% url 'gist:update' %}" method="post">
+                {% csrf_token %}
+                {% if perm == 1  %}
+                    <button type="submit" class="style1" style="margin-bottom: 20px;">保存</button>
+                {% endif %}
+                <a href="/gist/info/?code={{ postid }}"><button type="button" class="style1">返回</button></a>
+                <input type="hidden" name="postpath" value="{{ p.url }}">
+                <input type="hidden" name="postid" value="{{ postid }}">
+                <div id="test-editormd">
+                    <textarea style="display:none;" name="postbody"></textarea>
+                </div>
+            </form>
+            <p><a style="font-size: 2em;" href="/gist">返回列表</a></p>
+        </div>
 
-    $(function() {
+        <script src="{% static 'editor/editor.md-master/examples/js/jquery.min.js' %}"></script>
+        <script src="{% static 'editor/editor.md-master/editormd.js' %}"></script>
+        <script type="text/javascript">
+            var testEditor;
 
-        $.get("{% static p.url %}", function(md){
-            testEditor = editormd("test-editormd", {
-                width: "90%",
-                height: 800,
-                path : "{% static 'editor/editor.md-master/lib/' %}",
-{#                theme : "dark",#}
-{#                previewTheme : "dark",#}
-{#                editorTheme : "pastel-on-dark",#}
-                markdown : md,
-                codeFold : true,
-                //syncScrolling : false,
-                saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
-                searchReplace : true,
-                //watch : false,                // 关闭实时预览
-                htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
-                //toolbar  : false,             //关闭工具栏
-                //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
-                emoji : true,
-                taskList : true,
-                tocm            : true,         // Using [TOCM]
-                tex : true,                   // 开启科学公式TeX语言支持，默认关闭
-                flowChart : true,             // 开启流程图支持，默认关闭
-                sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
-                //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
-                //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
-                //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
-                //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
-                //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
-                imageUpload : true,
-                imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-                imageUploadURL : "{% static 'editor/editor.md-master/examples/php/upload.php' %}",
-                onload : function() {
-                    console.log('onload', this);
-                    //this.fullscreen();
-                    //this.unwatch();
-                    //this.watch().fullscreen();
+            $(function() {
 
-                    //this.setMarkdown("#PHP");
-                    //this.width("100%");
-                    //this.height(480);
-                    //this.resize("100%", 640);
-                }
+                $.get("{% static p.url %}", function(md){
+                    testEditor = editormd("test-editormd", {
+                        width: "90%",
+                        height: 800,
+                        path : "{% static 'editor/editor.md-master/lib/' %}",
+        {#                theme : "dark",#}
+        {#                previewTheme : "dark",#}
+        {#                editorTheme : "pastel-on-dark",#}
+                        markdown : md,
+                        codeFold : true,
+                        //syncScrolling : false,
+                        saveHTMLToTextarea : true,    // 保存 HTML 到 Textarea
+                        searchReplace : true,
+                        //watch : false,                // 关闭实时预览
+                        htmlDecode : "style,script,iframe|on*",            // 开启 HTML 标签解析，为了安全性，默认不开启
+                        //toolbar  : false,             //关闭工具栏
+                        //previewCodeHighlight : false, // 关闭预览 HTML 的代码块高亮，默认开启
+                        emoji : true,
+                        taskList : true,
+                        tocm            : true,         // Using [TOCM]
+                        tex : true,                   // 开启科学公式TeX语言支持，默认关闭
+                        flowChart : true,             // 开启流程图支持，默认关闭
+                        sequenceDiagram : true,       // 开启时序/序列图支持，默认关闭,
+                        //dialogLockScreen : false,   // 设置弹出层对话框不锁屏，全局通用，默认为true
+                        //dialogShowMask : false,     // 设置弹出层对话框显示透明遮罩层，全局通用，默认为true
+                        //dialogDraggable : false,    // 设置弹出层对话框不可拖动，全局通用，默认为true
+                        //dialogMaskOpacity : 0.4,    // 设置透明遮罩层的透明度，全局通用，默认值为0.1
+                        //dialogMaskBgColor : "#000", // 设置透明遮罩层的背景颜色，全局通用，默认为#fff
+                        imageUpload : true,
+                        imageFormats : ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+                        imageUploadURL : "{% static 'editor/editor.md-master/examples/php/upload.php' %}",
+                        onload : function() {
+                            console.log('onload', this);
+                            //this.fullscreen();
+                            //this.unwatch();
+                            //this.watch().fullscreen();
+
+                            //this.setMarkdown("#PHP");
+                            //this.width("100%");
+                            //this.height(480);
+                            //this.resize("100%", 640);
+                        }
+                    });
+                });
             });
-        });
-    });
-</script>
+        </script>
+     {% endfor %}
+{% endblock %}
