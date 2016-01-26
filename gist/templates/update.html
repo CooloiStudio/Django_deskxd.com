@@ -14,9 +14,7 @@
             </div>
             <form action="{% url 'gist:update' %}" method="post">
                 {% csrf_token %}
-                {% if perm == 1  %}
-                    <button type="submit" class="style1" style="margin-bottom: 20px;">保存</button>
-                {% endif %}
+                <button type="submit" class="style1" style="margin-bottom: 20px;">保存</button>
                 <a href="/gist/info/?code={{ postid }}"><button type="button" class="style1">返回</button></a>
                 <input type="hidden" name="postpath" value="{{ p.url }}">
                 <input type="hidden" name="postid" value="{{ postid }}">
